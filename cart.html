@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="cart.css"/>
+    <script src="checkoutscript.css"></script>
+    <title>Checkout</title>
+</head>
+<body>
+    <nav>
+            <img src="images/logo.jpg" alt="Dias Designs logo" style="width:80px;">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+            </nav>
+            
+    <h2>Shopping Cart</h2>
+    <div class="row">
+            <div class="col-75"
+            <div class="container">
+                <h5>Shopping Cart<span class="price" style="color: black"></span></h5>
+                <p><a href="#">Prod</a><span class="price"> $1500</span></p>
+                <p><a href="#">Dress</a><span class="price"> $3100</span></p>
+                <hr>
+                <p>Total:<span class="price" style=color:black"><b>$4600</b></span></p>
+            </div>
+
+        <div class="col-25">
+            <div class="container">
+                    <div class="row">
+                        <div class="col-58">
+                            <h4>Billing Address</h4>
+                            
+            <label for="fullname">Name</label>
+            <input type="text" id="fullname" name="fullname">
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address">
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city">
+
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country">
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+
+            <label for="number">Phone Number</label>
+            <input type="number" id="number" name="number">
+
+            <div class="col-50">
+                <h4>Payment</h4>
+            <label for="status">Accepted Cards</label>
+                <br>
+                  <input type="radio" id="visa" name="visa" value="Visa">
+                  <label for="visa">Visa</label><br>
+                  <input type="radio" id="mastercard" name="mastercard" value="Mastercard">
+                  <label for="mastercard">Mastercard</label><br>
+                  <input type="radio" id="cash" name="cash" value="Cash on Delivery">
+                  <label for="cash">Cash on Delivery</label><br>
+                  <br>
+                 <!-- <input type="submit" value="Submit">
+                  <input type="reset" value="Reset">-->
+                <br><br>
+
+            <label for="cardnumber">Card Number</label>
+            <input type="number" id="cardnumber" name="cardnumber">
+
+            <label for="expdate">Expiry Month</label>
+            <input type="number" id="expmonth" name="expmonth">
+            <div class="row">
+                <div class="col-50">
+                    <label for="expyear">Expiry Year</label>
+                    <input type="number" id="expyear" name="expyear">
+    
+                    <label for="cvv">CVV</label>
+                    <input type="number" id="cvv" name="cvv">
+    
+                </div>
+            </div>
+        </div>
+        <label>
+        <input type="checkbox" checked="checked" name="sameaddress">Shipping address is same as billing</label>
+        <input type="button" value="Continue" class="button">
+        </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>

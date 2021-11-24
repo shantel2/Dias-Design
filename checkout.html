@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="checkoutstyle.css"/>-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="checkoutscript.js"></script>
+    <title>Checkout</title>
+</head>
+<body>
+    <header>
+            <img src="images/logo.jpg" alt="Dias Designs logo" style="width:80px;">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#" class="borders">About Us</a>
+                <a href="#">Products</a>
+                <a href="#" class="borders">Products</a>
+                <a href="#">Testimonials</a>
+                <a href="#" class="borders">Contact Us</a>
+                <a href="#">FAQs</a>
+            </nav>
+        </header> 
+
+    <br><br>
+    <h1>Checkout</h1>
+    <div class="row">
+        <div class="container">
+            <form action="/action_page.php">
+                <div class="columns">
+                    <div class="column is-half">
+                        <div class ="box has-background-light">
+                            <b>Billing Address</b>
+                            <br>
+                                <label for="fullname">Name</label>
+                                <input type="text" id="fullname" name="fullname">
+                                <br><br>
+                                <label for="address">Address</label>
+                                <input type="text" id="address" name="address">
+                                <br><br>
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city">
+                                <br><br>
+                                <label for="country">Country</label>
+                                <input type="text" id="country" name="country">
+                                <br><br>
+                                <label for="email">Email</label>
+                                <input type="text" id="email" name="email">
+                                <br><br>
+                                <label for="number">Phone Number</label>
+                                <input type="number" id="number" name="number">
+                                <br><br>
+
+                                <label>
+                                <input type="checkbox" checked="checked" name="sameaddress"> Shipping address is same as billing</label>
+                                <br>
+                                <input type="button" value="Continue" class="button">
+                                </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        <div class="row">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class ="box has-background-warning-light">
+                            <b>Order Summary</b>
+                            <br>
+                            <h5>Card<span class="price" style="color: black"> 2 items</span></h5>
+                            <br>
+                            <p><a href="#">Swimsuit</a><span class="price"> $1500</span></p>
+                            <p><a href="#">Dress</a><span class="price"> $3100</span></p>
+                            <hr>
+                            <p>Total: <span class="price" style=color:black"><b>$4600</b></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>          
+    </body>
+</html>
