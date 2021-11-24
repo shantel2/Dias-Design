@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.products-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 100vh;
+    background: linear-gradient(
+        to right,
+        #E9BFFD 0%,
+        #E9BFFD 50%,
+        #FFF 50%,
+        #FFF 100%
+      );
+      padding: 40px;
+}
+
+/*.products-section{
+    width: 100%;
+    width: 70px 0;
+    background: rgb(233, 197, 233);
+}*/
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    overflow: hidden;
+    height: 2vh;
+    background: linear-gradient(
+        to right,
+        #E9BFFD 0%,
+        #E9BFFD 50%,
+        #FFF 50%,
+        #FFF 100%
+      );
+      padding: 40px;
+}
+
+.products-container{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.products{
+    flex-basis: 20%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: white;
+    position: relative;
+}
+
+.products img{
+    width: 21rem;
+    border-radius: 7px;
+    height: 20rem;
+    cursor: pointer;
+    color: rgb(212, 143, 212);
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    cursor: pointer;
+    border-radius: 7px;
+    cursor: pointer;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(218, 159, 218));
+    opacity: 0;
+    transition: 1s;
+}
+
+.products:hover .overlay{
+    opacity: 1;
+}
+
+.prod-description{
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%);
+    color: #000;
+    transition: 1s;
+}
+
+hr{
+    background: #FFF;
+    height: .1rem;
+    border:0;
+    margin:15px auto;
+    width: auto;
+    width: 60%;
+}
+
+p, h2{
+    color:#FFF;
+    font-size: 14px;
+}
+
+.products:hover .prod-description{
+    bottom: 30%;
+    opacity: 1;
+}
+
+.details input{
+    color: #fff;
+    width:70%;
+    height:25px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 1rem;
+    padding-left: 0px;
+    background: #000;
+    border-radius: 25px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.details input:hover{
+    background: #a216e4;
+}
+
+
+
+
+
