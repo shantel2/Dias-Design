@@ -12,14 +12,30 @@ error_reporting(E_ALL | E_STRICT);
 
 
 <?php
-require('root_credentials.php');
+    require('root_credentials.php');
 ?>
-
 
 <?php
-    $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $username, $password);
-    
+    $ProductID = filter_var($_POST['prod_id'], FILTER_SANITIZE_NUMBER_INT);
+
+    if(isset($ProductID)){
+        $sql = "DELETE FROM Products WHERE ProductID = $ProductID;";
+
+        if($conn ->query($sql) == TRUE)
+            {
+                echo "<h3> Records Successfully Removed!</h3>";
+
+            }
+
+            else {
+                echo "<h3>An Error has occured, Item not Deleted<h3>";
+            }
+
+    }
+
+
+
+
 
 ?>
-
 

@@ -27,8 +27,6 @@ require('root_credentials.php');
 
 
 <?php
-    $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $username, $password);
-
     if(!isset($product_name) || !isset($description) || !isset($type) || !isset($price) || !isset($size) || !isset($colour)) 
         {
             echo "<H2> A required field is missing from the product submission</H2>";
@@ -44,7 +42,7 @@ require('root_credentials.php');
             }
 
             else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "<h3>An Error has occured, Item not Added<h3>";
             }
 
         }
