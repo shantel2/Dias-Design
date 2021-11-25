@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dias Designs</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script scr="forms.js"></script>
 
   <style>
 
@@ -17,24 +18,8 @@
     color: white;
     }
 
-    article {
-    float: right;
-    padding: 20px;
-    width: 50%;
-    background-color: #E9BFFD; 
-    height: 700px;
-    text-align: left;
-    font-size: 20px;
-    }
-
-    /* Clear floats after the columns */
-    section::after {
-    content: "";
-    display: table;
-    clear: both;
-    }
-
 </style>
+
   </head>
   
   
@@ -43,7 +28,7 @@
     <nav class="navbar">
       <!-- Dias Designs Logo -->
       <div class="navbar-logo">
-        <a href="http://127.0.0.1:5500/index.html" class="navbar-logo">
+        <a href="" class="navbar-logo">
          <img src="Images/Dias Designs Transparent Background.png" alt="Business logo" style="max-height: 100px" class = "py-2 px-2">
         </a>
       </div>
@@ -94,48 +79,57 @@
     </header>
 
     <!-- Contact Form -->
+      <section class="section has-background-light">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-half">
+              <img src="Images/Contact Us Graphic.png" alt="Contact-Form-Photo">
+            </div>
 
-    <section> 
-      <article> 
-        <h1 style = "text-align:center">What's on your mind? </h1> 
+            <div class="column is-half">
+              <form>
+                <h1 style="text-align:center">What's on your mind? </h1> 
 
-        <div class="field">
-          <label class="label">First Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="First Name">
+                <div class="field">
+                  <label class="label">First Name</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="First Name">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Last Name</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Last Name">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control">
+                    <input class="input" type="email" placeholder="Example: username@">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Message</label>
+                  <div class="control">
+                    <textarea class="textarea" placeholder="Write something.."></textarea>
+                  </div>
+                </div>
+
+                <div class="field is-grouped">
+                  <div class="control">
+                    <button class="button is-link">Submit</button>
+                  </div>
+                  <div class="control">
+                    <button class="button is-link is-light">Cancel</button>
+                  </div>
+                </div>  
+                </form>  
+            </div>
           </div>
         </div>
-
-        <div class="field">
-          <label class="label">Last Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Last Name">
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input class="input" type="email" placeholder="Example: username@">
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Message</label>
-          <div class="control">
-            <textarea class="textarea" placeholder="Write something.."></textarea>
-          </div>
-        </div>
-
-        <div class="field is-grouped">
-          <div class="control">
-            <button class="button is-link">Submit</button>
-          </div>
-          <div class="control">
-            <button class="button is-link is-light">Cancel</button>
-          </div>
-        </div>    
-        </article>
       </section>
 
   </body>
