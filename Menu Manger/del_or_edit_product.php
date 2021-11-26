@@ -10,6 +10,13 @@ error_reporting(E_ALL | E_STRICT);
 ?>
 <!-- END OF DEBUGGING MODE -->
 
+
+
+<?php
+    require('root_credentials.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +31,6 @@ error_reporting(E_ALL | E_STRICT);
 <body>
 
 
-    <?php
-    require('root_credentials.php');
-    ?>
 
 
     <?php
