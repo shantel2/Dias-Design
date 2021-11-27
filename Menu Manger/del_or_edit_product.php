@@ -25,21 +25,28 @@ error_reporting(E_ALL | E_STRICT);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="edit_or_del.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="stylesheet.css"> 
 
-    <title>Update Product</title>
 </head>
 <body>
 
 
-
+    <title>Update Product</title>
 
     <?php
         $all_products = $conn ->query("SELECT DISTINCT * FROM Products;");
         $product_list = $all_products ->fetchAll(PDO::FETCH_ASSOC);    
     ?>
 
+
+    <header> 
+        <h1> Product Management </h1>
+        <h2> (Deletion or Edition of product content) </h2>
+    </header>
+
     <table id="table">
         <tr>
+
             <th>Product Name</th>
             <th>Product Description</th>
             <th>Product Price</th>

@@ -1,6 +1,4 @@
 window.addEventListener('load',(e)=>{
-    const DELETE_BUTTON =  $("");
-    const EDIT_BUTTON =   $("");
 
     let table = document.getElementById('table');
 
@@ -39,27 +37,6 @@ window.addEventListener('load',(e)=>{
             let request = {prod_id: productID};
             window.location.href = `menu_manager_update_page.php?prod_id=${productID}`;
 
-            // $.ajax({
-            //     type: "POST",
-            //     url: "menu_manager_edit.php",
-            //     data: request,
-            //     dataType: "html"
-            // }).done(response =>{
-                
-            // }).fail(()=>{
-            //     tempAlert("Failed to Access Edit Product Page",2000);
-
-            // })
-
-            // let httpc = new XMLHttpRequest();
-            // let url = "menu_manager_edit.php";
-            // httpc.open("POST", url, true);
-            // httpc.onreadystatechange = function() { //Call a function when the state changes.
-            //     if(httpc.readyState == 4 && httpc.status == 200) { // complete and no errors
-            //         alert(httpc.responseText); // some processing here, or whatever you want to do with the response
-            //     }
-            // };
-            // httpc.send(request);
         })
 
     }
@@ -77,5 +54,8 @@ window.addEventListener('load',(e)=>{
  location.reload();
 }
 
+$( function() {
+    $( "#dialog" ).dialog();
+  } );
 
 });
