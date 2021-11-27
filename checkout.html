@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--<link rel="stylesheet" href="checkoutstyle.css"/>-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <script src="checkoutscript.js"></script>
+    <link rel="stylesheet" href="checkoutstyle.css">
+    <script src="app.js"></script>
     <title>Checkout</title>
 </head>
 <body>
+    <!--Navigation bar in header-->
     <header>
-            <img src="images/logo.jpg" alt="Dias Designs logo" style="width:80px;">
+            <img src="New folder/logo.jpg" alt="Dias Designs logo" style="width:80px;">
             <nav>
+                <p style="text-align:center;"></p>
                 <a href="#">Home</a>
-                <a href="#" class="borders">About Us</a>
-                <a href="#">Products</a>
-                <a href="#" class="borders">Products</a>
+                <a href="aboutus.html" class="borders">About Us</a>
+                <a href="New folder/index.html" class="borders">Products</a>
                 <a href="#">Testimonials</a>
                 <a href="#" class="borders">Contact Us</a>
                 <a href="#">FAQs</a>
@@ -24,12 +25,22 @@
         </header> 
 
     <br><br>
-    <h1>Checkout</h1>
-    <div class="row">
-        <div class="container">
-            <form action="/action_page.php">
-                <div class="columns">
-                    <div class="column is-half">
+
+    <section class="has-background-link-light">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    <center>Checkout</center>
+                </h1>
+            </div>
+        </div>
+    </section>    
+
+
+    <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <!--<div class="column is-half">-->
                         <div class ="box has-background-light">
                             <b>Billing Address</b>
                             <br>
@@ -58,25 +69,36 @@
                                 <input type="button" value="Continue" class="button">
                                 </label>
                         </div>
-                    </div>
-                </div>
-            </form>
-
-        <div class="row">
-            <div class="columns">
-                <div class="column is-half">
-                    <div class ="box has-background-warning-light">
-                            <b>Order Summary</b>
-                            <br>
-                            <h5>Card<span class="price" style="color: black"> 2 items</span></h5>
-                            <br>
-                            <p><a href="#">Swimsuit</a><span class="price"> $1500</span></p>
-                            <p><a href="#">Dress</a><span class="price"> $3100</span></p>
-                            <hr>
-                            <p>Total: <span class="price" style=color:black"><b>$4600</b></span></p>
-                    </div>
+                    <!--</div>-->
                 </div>
             </div>
-        </div>          
-    </body>
+    </div>
+
+    
+
+        <div class="column">
+            <!--<div class="column is-half">-->
+                <div class ="box has-background-warning-light">
+                        <b>Your Cart</b>
+                        <br>
+                        <h5>Card<span class="price" style="color: black"> 2 items</span></h5>
+                        <br>
+                        <p><a href="#">Swimsuit</a><span class="price"> $1500</span></p>
+                        <p><a href="#">Dress</a><span class="price"> $3100</span></p>
+                        <br>
+                        <!--<p>Total:<span class="price"><style="color:black">4600</span></p>-->
+                </div>
+            <!--</div>-->
+        </div>
+        
+        <!--modal-->
+        <div class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                  <!-- Any other Bulma elements you want -->
+                </div>
+                <button class="modal-close is-large" aria-label="close">Submit</button>
+              </div>
+    </section>      
+</body>
 </html>
