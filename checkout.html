@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="checkoutstyle.css">
-    <script src="app.js"></script>
+    <script src="#"></script>
     <title>Checkout</title>
 </head>
 <body>
@@ -26,12 +26,12 @@
 
     <br><br>
 
-    <section class="has-background-link-light">
+    <section class="has-background">
         <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    <center>Checkout</center>
-                </h1>
+            <div class="containerA">
+                    <div class="center">
+                        <h3>Checkout</h3>
+                    </div>
             </div>
         </div>
     </section>    
@@ -62,7 +62,6 @@
                                 <label for="number">Phone Number</label>
                                 <input type="number" id="number" name="number">
                                 <br><br>
-
                                 <label>
                                 <input type="checkbox" checked="checked" name="sameaddress"> Shipping address is same as billing</label>
                                 <br>
@@ -71,25 +70,23 @@
                         </div>
                     <!--</div>-->
                 </div>
-            </div>
+                <div class="column">
+                        <!--<div class="column is-half">-->
+                            <div class ="box has-background-light">
+                                    <b>Your Cart</b>
+                                    <br>
+                                    <h5>Card<span class="price" style="color: black"> 2 items</span></h5>
+                                    <br>
+                                    <p><a href="#">Swimsuit</a><span class="price"> $1500</span></p>
+                                    <p><a href="#">Dress</a><span class="price"> $3100</span></p>
+                                    <br>
+                                    <Total:<span class="price"><style="color:black">$4600</span></Total>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </div>
 
-    
-
-        <div class="column">
-            <!--<div class="column is-half">-->
-                <div class ="box has-background-warning-light">
-                        <b>Your Cart</b>
-                        <br>
-                        <h5>Card<span class="price" style="color: black"> 2 items</span></h5>
-                        <br>
-                        <p><a href="#">Swimsuit</a><span class="price"> $1500</span></p>
-                        <p><a href="#">Dress</a><span class="price"> $3100</span></p>
-                        <br>
-                        <!--<p>Total:<span class="price"><style="color:black">4600</span></p>-->
-                </div>
-            <!--</div>-->
-        </div>
         
         <!--modal-->
         <div class="modal">
@@ -98,7 +95,7 @@
                   <!-- Any other Bulma elements you want -->
                 </div>
                 <button class="modal-close is-large" aria-label="close">Submit</button>
-              </div>
+        </div>
     </section>      
 </body>
 </html>
