@@ -12,9 +12,7 @@ error_reporting(E_ALL | E_STRICT);
 
 
 
-<?php
-    require('root_credentials.php');
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,11 +20,32 @@ error_reporting(E_ALL | E_STRICT);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="update.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
+
+<?php
+    require('root_credentials.php');
+    function get_email($user_id){
+        include 'root_credentials.php';
+        $name =$conn->query("SELECT email FROM Users WHERE UserID = $user_id;");
+        $email= $name->fetchAll(PDO::FETCH_ASSOC);
+        return $email[0]["email"];
+    }
+
+
+    function get_product_name($product_id){
+        include 'root_credentials.php';
+        $name =$conn->query("SELECT Title FROM Products WHERE ProductID = $product_id;");
+        $product_title = $name->fetchAll(PDO::FETCH_ASSOC);
+        return $product_title[0]["Title"];
+    }
+?>
     <H1>Manage Order Page</H1>
-    <table>
+    <table id="table">
         <tr>
             <th>Order ID</th>
             <th>User Email</th>
@@ -34,21 +53,36 @@ error_reporting(E_ALL | E_STRICT);
             <th>Quantity</th>
             <th>Total Cost</th>
             <th>Status</th>
+
         </tr>
+        <?php
+        $all_orders = $conn ->query("SELECT DISTINCT * FROM Orders;");
+        $order_list = $all_orders ->fetchAll(PDO::FETCH_ASSOC);    
+    ?>
 
         <?php foreach($order_list as $order):?>
+
             <tr>
                 <td><?=$order['OrderID']?></td>
-                <td><?=$order['UserID']?></td>
-                <td><?=$order['ProductID']?></td>
+                <td><?=get_email($order['UserID'])?></td>
+                <td><?=get_product_name($order['ProductID'])?></td>
                 <td><?=$order['quantity']?></td>
-                <td><?=$order['total_cost']?></td>
+                <td>$ <?=$order['total_cost']?></td>
                 <td><?=$order['status']?></td>
+                <td><button id="<?=$order['OrderID']?>">Update</button></td>
+                <td style ="display: none"><?=$order['OrderID']?></td>
+
+
             </tr>
 
         <?php endforeach;?>
 
     </table>
+
+    <?php
+           
+                 
+    ?>
 
 </body>
 </html>
