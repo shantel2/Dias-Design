@@ -3,6 +3,13 @@ $var = "Testing 1 and 2";
 ?>
 
 
+<!-- DEBUGGING MODE -->
+<?php
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+?>
+<!-- END OF DEBUGGING MODE -->
+
 <?php
 ob_start();
 define('FPDF_FONTPATH','font/');
