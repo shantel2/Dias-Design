@@ -59,7 +59,7 @@ $color=$array_info[6];
 <body>
 
   <header> 
-    <h1> Product Creation </h1>
+    <h1> Product Update </h1>
   </header>
   
   <section>

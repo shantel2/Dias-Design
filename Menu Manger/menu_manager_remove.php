@@ -32,6 +32,10 @@ error_reporting(E_ALL | E_STRICT);
             }
 
     }
+    else{
+        echo "<h3>No Product Selected to remove<h3>";
+
+    }
 
 
 

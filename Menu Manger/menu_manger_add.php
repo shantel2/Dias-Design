@@ -38,17 +38,17 @@ require('root_credentials.php');
 <body>
 
     <?php if(!isset($product_name) || !isset($description) || !isset($type) || !isset($price) || !isset($size) || !isset($colour)):?>
-        <div id="dialog" hidden>
+        <div id="dialog" >
         <h3> <?="<H2> A required field is missing from the product submission</H2>"?></h3>
         </div>
     <?php else:?>
         <?php   $sql = "INSERT INTO Products(Title, Description, Type, Price, size, colour) VALUES ('$product_name','$description','$type',$price,'$size','$colour');";?>
             <?php if($conn ->query($sql) == TRUE):?>
-                <div id="dialog" hidden>
+                <div id="dialog" >
                         <h3> <?="Records Successfully Saved!"?></h3>
                 </div>
             <?php else:?>    
-                <div id="dialog" hidden>
+                <div id="dialog" >
                     <h3> <?="An Error has occured, Item not Added"?></h3>
                 </div>
                 <?php endif;?>
