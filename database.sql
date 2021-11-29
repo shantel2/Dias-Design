@@ -105,3 +105,9 @@ INSERT INTO Products(Title,Description,Type,Price,size,Colour)VALUES('Winter Wea
 INSERT INTO Products(Title,Description,Type,Price,size,Colour)VALUES('Summer Wear','For the Summer','Bikini & Coverup',4500.00,'medium','Green');
 INSERT INTO Products(Title,Description,Type,Price,size,Colour)VALUES('Key Chain','a token perfect gift','Accessories',1500.00,'small','Red');
 
+
+INSERT INTO Orders(UserID,ProductID,quantity,total_cost,status)VALUES(1,2,1,5000.00,'Pending');
+INSERT INTO Orders(UserID,ProductID,quantity,total_cost,status)VALUES(1,1,1,3500.00,'Paid');
+INSERT INTO Orders(UserID,ProductID,quantity,total_cost,status)VALUES(1,3,1,3000.00,'Started');
+INSERT INTO Orders(UserID,ProductID,quantity,total_cost,status)VALUES(1,4,1,4500.00,'Pending');
+
