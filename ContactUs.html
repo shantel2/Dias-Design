@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dias Designs</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <script scr="forms.js"></script>
+    <title>Dias Designs Contact Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> <!-- link for access to bulma api for page design-->
 
   <style>
 
@@ -18,7 +17,7 @@
     color: white;
     }
 
-</style>
+  </style>
 
   </head>
   
@@ -87,43 +86,40 @@
             </div>
 
             <div class="column is-half">
-              <form>
+              <form action="https://formsubmit.co/kerene789@gmail.com" method="POST"> <!-- linl to FormSubmit api that allows the admin to recieve emails from form-->
                 <h1 style="text-align:center">What's on your mind? </h1> 
 
                 <div class="field">
                   <label class="label">First Name</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="First Name">
+                    <input class="input" type="text" placeholder="First Name" name="fname" required>
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label">Last Name</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Last Name">
+                    <input class="input" type="text" placeholder="Last Name" name="lname" required>
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label">Email</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Example: username@">
+                    <input class="input" type="email" placeholder="Example: username@" name="email" required>
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label">Message</label>
                   <div class="control">
-                    <textarea class="textarea" placeholder="Write something.."></textarea>
+                    <textarea class="textarea" placeholder="Write something.." name="msg" required></textarea>
                   </div>
                 </div>
 
                 <div class="field is-grouped">
                   <div class="control">
                     <button class="button is-link">Submit</button>
-                  </div>
-                  <div class="control">
-                    <button class="button is-link is-light">Cancel</button>
                   </div>
                 </div>  
                 </form>  
