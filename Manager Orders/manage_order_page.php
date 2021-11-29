@@ -21,7 +21,7 @@ error_reporting(E_ALL | E_STRICT);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="update.js"></script>
+    <script src="script.js"></script>
     
     <title>Document</title>
 </head>
@@ -71,6 +71,7 @@ error_reporting(E_ALL | E_STRICT);
                 <td><?=$order['status']?></td>
                 <td><button id="<?=$order['OrderID']?>">Update</button></td>
                 <td style ="display: none"><?=$order['OrderID']?></td>
+                <td><button id="invoice_<?=$order['OrderID']?>"> Create Invoice</button></td>
 
 
             </tr>
