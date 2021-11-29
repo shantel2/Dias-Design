@@ -1,0 +1,10 @@
+GRANT ALL PRIVILEGES ON ecommerce.* TO 'dias_designs'@'localhost' IDENTIFIED BY 'admin_root';
+
+
+INSERT INTO Products (Title,Description,Type,Price,size,Colour) VALUES ('1ST Item','This is the first','Tops',15.00,'small','Red');
+
+$product_name,$description,$type,$price,$size,$colour
+
+
+
+GRANT ALL PRIVILEGES ON ecommerce.* TO 'admin'@'localhost' IDENTIFIED BY 'password123';
