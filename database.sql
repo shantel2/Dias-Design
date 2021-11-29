@@ -83,9 +83,25 @@ CREATE TABLE `Invoices` (
    `file_name` varchar(35) NOT NULL,
    `type` VARCHAR(30) NOT NULL,
    `UserID` int NOT NULL,
+   `OrderID` int NOT NULL,
    `content` MEDIUMBLOB NOT NULL,
    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
    PRIMARY KEY(`InvoiceID`),
-   FOREIGN KEY(`UserID`) REFERENCES Users(`UserID`)
+   FOREIGN KEY(`UserID`) REFERENCES Users(`UserID`),
+   FOREIGN KEY(`OrderID`) REFERENCES Orders(`OrderID`)
+
 );
+
+
+-- 
+-- Insert test data
+-- 
+
+INSERT INTO Users(Fname,Lname,email,password) VALUES('Andrew','Hall','andew@comcast.com','password123');
+
+INSERT INTO Products(Title,Description,Type,Price,size,Colour)VALUES('Bikini','For a fun day at the beach','Tops',3500.00,'small','Red');
+INSERT INTO Products(Title,Description,Type,Price,size,Colour)VALUES('Swimwear','Hotel Trip','Bikini & Coverup',5000.00,'medium','Green');
+INSERT INTO Products(Title,Description,Type,Price,size,Colour)VALUES('Winter Wear','For the Winter','Tops',3000.00,'small','Yellow');
+INSERT INTO Products(Title,Description,Type,Price,size,Colour)VALUES('Summer Wear','For the Summer','Bikini & Coverup',4500.00,'medium','Green');
+INSERT INTO Products(Title,Description,Type,Price,size,Colour)VALUES('Key Chain','a token perfect gift','Accessories',1500.00,'small','Red');
 

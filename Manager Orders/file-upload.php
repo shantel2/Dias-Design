@@ -13,7 +13,6 @@ error_reporting(E_ALL | E_STRICT);
 
 <?php
     $order_id = $_GET['order_id'];
-    var_dump($order_id);
 
 ?>
 

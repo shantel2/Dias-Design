@@ -53,6 +53,8 @@ error_reporting(E_ALL | E_STRICT);
             <th>Quantity</th>
             <th>Total Cost</th>
             <th>Status</th>
+            <th colspan="4">Options</th>
+
 
         </tr>
         <?php
@@ -73,6 +75,7 @@ error_reporting(E_ALL | E_STRICT);
                 <td style ="display: none"><?=$order['OrderID']?></td>
                 <td><button id="invoice_<?=$order['OrderID']?>"> Create Invoice</button></td>
                 <td><button id="upload_<?=$order['OrderID']?>"> Upload Invoice</button></td>
+                <td><button id="view_<?=$order['OrderID']?>"> View Invoice</button></td>
 
 
 

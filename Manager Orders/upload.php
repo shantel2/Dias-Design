@@ -52,11 +52,12 @@ error_reporting(E_ALL | E_STRICT);
                     
                     include 'root_credentials.php';
 
-                    $insert_sql = "INSERT INTO `Invoices` (`file_name`, `type`,`UserID`,`content`) VALUES(:title,:pdf,:userID,:content);";
+                    $insert_sql = "INSERT INTO `Invoices` (`file_name`, `type`,`UserID`,`OrderID`,`content`) VALUES(:title,:pdf,:userID,:order_id,:content);";
                     $stmt = $conn->prepare($insert_sql);
                     $stmt->bindParam(':title', $title);
                     $stmt->bindParam(':pdf', $type);
                     $stmt->bindParam(':userID', $user_id);
+                    $stmt->bindParam(':order_id', $order_id);
                     $stmt->bindParam(':content', $pdf_blob, PDO::PARAM_LOB);
 
                     if ($stmt->execute() === FALSE) {
@@ -64,6 +65,7 @@ error_reporting(E_ALL | E_STRICT);
                     }
                      else {
                         echo "<h2>Invoice Uploaded</h2>";
+
                     }
                 } catch (PDOException $e) {
                     echo 'Database Error '. $e->getMessage(). ' in '. $e->getFile().
