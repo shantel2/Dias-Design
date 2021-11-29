@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+      to right,
+      #E9BFFD 0%,
+      #E9BFFD 50%,
+      #FFF 50%,
+      #FFF 100%
+    );
+    padding: 40px;
+}
+
+header {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    padding: 30px 100px;
+    top:-30px;
+    left:0;
+    width:100%;
+}
+
+.logo {
+    max-width: 100px;
+    margin-left: 2rem;
+}
+
+.header #nav-icons img{
+    height: 1.5rem;
+    margin-left: 3rem;
+    justify-content: space-between;
+    cursor:pointer;
+ }
+
+.navigation {
+    display:flex;
+}
+
+.navigation li {
+    list-style:none;
+}
+
+.navigation li a {
+    position:relative;
+    color: #000;
+    text-decoration: none;
+    margin-left:40px;
+}
+
+.navigation img {
+  height: 25px;
+  margin-left: 1.5rem;;
+  cursor: pointer;
+}
+
+.information {
+    position: relative;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.information .text {
+    width:100%;
+    max-width: 600px;
+}
+
+.information .text h2{
+    color: #771cbf;
+    font-size: 55px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 60px;
+    margin-bottom: 30px;
+  }
+
+  .information .text p{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+  
+button{
+    display: inline-block;
+    color: #fff;
+    background: #771cbf;
+    border-style: none ;
+    padding: 15px 50px;
+    font-weight: 700;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  
+button:hover{
+    background: #000;
+    transform: translateY(-3px);
+    transition: ease-in-out 0.5s;
+}
+
+.main-img .img {
+    display: none;
+}
+.main-img .img.active {
+    display: block;
+}
+
+.main-img .img img {
+    width: 100%;
+    max-width:550px;
+    margin-bottom: -20px;;
+    height: 500px;
+}
+
+.media-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+.media-icons a{
+    position: relative;
+    color: #771cbf;
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property: transform;
+}
+  
+.media-icons a:not(:last-child){
+    margin-right: 60px;
+}
+  
+.media-icons a:hover{
+    transform: scale(1.5);
+}
+
+@media (max-width: 1200px) {
+
+    label .close-btn{
+        display: none;
+      }
+
+    .main {
+        padding: 40px;
+    }
+
+    header {
+        padding: 20px 40px;
+    }
+    
+    .logo {
+        max-width: 70px;
+        margin-bottom: -25px;
+    }
+    .information {
+        flex-direction:column;
+        margin: 120px 0 40px;
+    }
+    .content .text {
+        max-width: 100%;
+    }
+    .content .text h2{
+        font-size: 4em;
+    }
+
+    .main-img {
+        margin-top: 40px
+    }
+
+    .main-img .img img {
+        width: 100%;
+        max-width: 420px;
+    }
+    .media-icons {
+        position: relative;
+        padding: 0;
+    }
+    
+}
+@media (max-width: 1200px){
+    header .navigation{
+      display: none;
+    }
+
+    label .close-btn{
+        display: none;
+    }
+
+    #nav-icons {
+      display:none;
+    }
+  
+    label{
+      display: block;
+      font-size: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      transition-property: color;
+    }
+  
+    label:hover{
+      color: #fff;
+    }
+ 
+    #check:checked ~ header .navigation{
+      z-index: 2;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background:#E9BFFD;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    #check:checked ~  header .navigation a{
+      font-weight: 700;
+      margin-right: 0;
+      margin-bottom: 50px;
+      letter-spacing: 2px;
+    }
+  
+    #check:checked ~ header label .close-btn{
+      z-index: 2;
+      position: fixed;
+      display: block;
+    }
+    #check:checked ~ header label .menu-btn{
+        display: none;
+      }
+
+    #check{
+        z-index: 3;
+        display: none;
+    }
+  
+    #check:checked ~ header label .menu-btn{
+      display: none;
+    }
+  
+    label .menu-btn{
+      position: absolute;
+    }
+  
+    
+}
