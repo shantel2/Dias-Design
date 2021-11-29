@@ -43,6 +43,24 @@ error_reporting(E_ALL | E_STRICT);
         $product_title = $name->fetchAll(PDO::FETCH_ASSOC);
         return $product_title[0]["Title"];
     }
+
+    function invoice_available($order_id){
+        include 'root_credentials.php';
+        $invoice = $conn->query("SELECT file_name FROM Invoices WHERE OrderID = $order_id;");
+        $file_name = $invoice->fetchAll(PDO::FETCH_ASSOC);
+        $status = isset($file_name[0]["file_name"]);
+
+        if($status)
+        {
+       
+            return TRUE;
+        }
+        else{
+
+
+            return FALSE;
+        }
+    }
 ?>
     <H1>Manage Order Page</H1>
     <table id="table">
@@ -75,7 +93,7 @@ error_reporting(E_ALL | E_STRICT);
                 <td style ="display: none"><?=$order['OrderID']?></td>
                 <td><button id="invoice_<?=$order['OrderID']?>"> Create Invoice</button></td>
                 <td><button id="upload_<?=$order['OrderID']?>"> Upload Invoice</button></td>
-                <td><button id="view_<?=$order['OrderID']?>"> View Invoice</button></td>
+                <td><button id="view_<?=$order['OrderID']?>" <?php if(!invoice_available($order['OrderID'])){echo " disabled ";}?>>Download Invoice</button></td>
 
 
 
