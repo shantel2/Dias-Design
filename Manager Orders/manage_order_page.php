@@ -72,6 +72,8 @@ error_reporting(E_ALL | E_STRICT);
                 <td><button id="<?=$order['OrderID']?>">Update</button></td>
                 <td style ="display: none"><?=$order['OrderID']?></td>
                 <td><button id="invoice_<?=$order['OrderID']?>"> Create Invoice</button></td>
+                <td><button id="upload_<?=$order['OrderID']?>"> Upload Invoice</button></td>
+
 
 
             </tr>

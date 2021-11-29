@@ -4,9 +4,8 @@ window.addEventListener('load',(e)=>{
     for(let i =1; i < table.rows.length; i++){
         let UPDATE_BUTTON = $(`#${ table.rows[i].cells[7].innerHTML}`);
         let INVOICE_BUTTON = $(`#invoice_${table.rows[i].cells[7].innerHTML}`);
+        let UPLOAD_BUTTON = $(`#upload_${table.rows[i].cells[7].innerHTML}`);
         
-        console.log(document.querySelector(`#invoice_${table.rows[i].cells[7].innerHTML}`));
-
         
         UPDATE_BUTTON.on('click',e=>{
             window.location.href = `manage_order_update_page.php?order_id=${e.target.id}`;
@@ -35,6 +34,12 @@ window.addEventListener('load',(e)=>{
             //     alert("Failed to generate invoice");
             // }                
             // );
+        });
+
+        UPLOAD_BUTTON.on('click',e=>{
+            let order_id = e.target.id.slice(7); // slice off the word upload
+            window.location.href = `file-upload.php?order_id=${order_id}`;
+
         });
     }
 

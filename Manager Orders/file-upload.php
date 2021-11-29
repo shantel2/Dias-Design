@@ -1,16 +1,53 @@
+<!--  -->
+<!-- WRAP ALL OF  THE BELOW IN A SESSION AUTHENTICATION -->
+<!--  -->
+
+
+<!-- DEBUGGING MODE -->
+<?php
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+?>
+<!-- END OF DEBUGGING MODE -->
+
+
+<?php
+    $order_id = $_GET['order_id'];
+    var_dump($order_id);
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>File Upload</title>
 </head>
 <body>
+    <h2>
+        Select an Invoice to Upload
+    </h2>
  
-<form method="post" enctype="multipart/form-data">
-    <label>Title</label>
-    <input type="text" name="title">
-    <label>File Upload</label>
-    <input type="File" name="file">
-    <input type="submit" name="submit">
+<form action="upload.php" method="POST" enctype="multipart/form-data">
+    <div class="">
+        <label for="title">Title</label>
+        <input type="text" name="title">
+    </div>
+
+    <div>
+        <input type="file" name="pdf_file">
+        <input type="hidden" name="MAX_FILE_SIZE" value= "67108864"/>
+        <input type="hidden" name="order_id" value= <?=$order_id?>/>
+
+    </div>
+
+    <div>
+        <label for="submit">Upload Invoice</label> 
+        <input type="submit" name="submit">
+
+    </div>
+
+
  
  
 </form>
@@ -18,42 +55,3 @@
 </body>
 </html>
  
-<?php 
-$localhost = "localhost"; #localhost
-$dbusername = "root"; #username of phpmyadmin
-$dbpassword = "";  #password of phpmyadmin
-$dbname = "CodeFlix";  #database name
- 
-#connection string
-$conn = mysqli_connect($localhost,$dbusername,$dbpassword,$dbname);
- 
-if (isset($_POST["submit"]))
- {
-     #retrieve file title
-        $title = $_POST["title"];
-     
-    #file name with a random number so that similar dont get replaced
-     $pname = rand(1000,10000)."-".$_FILES["file"]["name"];
- 
-    #temporary file name to store file
-    $tname = $_FILES["file"]["tmp_name"];
-   
-     #upload directory path
-$uploads_dir = 'images';
-    #TO move the uploaded file to specific location
-    move_uploaded_file($tname, $uploads_dir.'/'.$pname);
- 
-    #sql query to insert into database
-    $sql = "INSERT into fileup(title,image) VALUES('$title','$pname')";
- 
-    if(mysqli_query($conn,$sql)){
- 
-    echo "File Sucessfully uploaded";
-    }
-    else{
-        echo "Error";
-    }
-}
- 
- 
-?>
