@@ -12,8 +12,8 @@ error_reporting(E_ALL | E_STRICT);
 
 
 <?php
-        $root = $_SERVER['DOCUMENT_ROOT'];
-        include("$root" . "/Dias-Design/root_credentials.php");
+    $root = $_SERVER['DOCUMENT_ROOT'];
+    include("$root" . "/Dias-Design/root_credentials.php");
     
     $order_id_str = $_GET['order_id'];
     $order_id = (int)$order_id_str;
@@ -35,7 +35,7 @@ error_reporting(E_ALL | E_STRICT);
             echo $content;
         }
     } else {
-        header('location: manage_order_page.php');
+        header('location: profile.php');
     }
 
 

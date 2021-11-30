@@ -24,9 +24,7 @@
             </div>
         </div>
         <div class="media-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://instagram.com/dias_designs?utm_medium=copy_link "><i class="fab fa-instagram"></i></a>
           </div>
     </section>
 </body>

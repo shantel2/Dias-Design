@@ -41,7 +41,7 @@ error_reporting(E_ALL | E_STRICT);
             crossorigin="anonymous"
         />
         
-        <title>Shopping Cart</title>
+        <title>Products</title>
     </head>
 
     <body>
@@ -49,9 +49,9 @@ error_reporting(E_ALL | E_STRICT);
         <nav>
             <div class="navbar-top">
                 <div>
-                    <button id="menuButton"><i class="fas fa-bars"></i></button>
+                    <button id="menuButton"></button>
                 </div>
-                <div>
+
                     <!--Shopping cart-->
                     <div class="shopping-cart">
                         <div class="sum-prices">
@@ -96,7 +96,6 @@ error_reporting(E_ALL | E_STRICT);
                             <p><?=$product['Description']?></p>
                             <div class="details">
                                 <button id = "prod<?=$product['ProductID']?>.jpg" class = "btn">Buy Now!</button>
-                                <button class = "more-information">Details</button>
                             </div>
                         </div>
                         <div class = "price">

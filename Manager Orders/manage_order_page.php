@@ -22,8 +22,44 @@ error_reporting(E_ALL | E_STRICT);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
-    <link rel="text/stylesheet" href="styles.css">
-    
+
+<style>
+    /* Header Style*/
+ header {
+    background-color: #790EAA;
+    padding: 20px;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Table Format*/
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#table tr:nth-child(even){background-color: #f2f2f2;}
+#table tr:hover {background-color: #ddd;}
+#table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #280454
+    ;
+    color: white;
+}
+</style>
+
 </head>
 <body>
 

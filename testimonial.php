@@ -15,19 +15,19 @@
 			<div class="container">
 				<img src= "./images/testimonials.png" class="img">
 				<div class ="name">Dias Doll 1</div>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam neque reiciendis sit. Incidunt tempore vitae aliquam alias voluptatem accusantium magnam eos harum ipsam modi, quisquam illo facilis suscipit maxime obcaecati laboriosam cum blanditiis ducimus ut consectetur id mollitia aperiam rerum.<span class="fa fa-quote-right right"></span></p>
+				<p> Hi goodnight, I got the stuffs today it's super cute, I love it 😍 and it also fits perfect... thanks much 💯 <span class="fa fa-quote-right right"></span></p>
 			</div>
 
 			<div class="container">
 				<img src= "./images/testimonials.png" class="img">
 				<div class ="name">Dias Doll 2</div>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam neque reiciendis sit. Incidunt tempore vitae aliquam alias voluptatem accusantium magnam eos harum ipsam modi, quisquam illo facilis suscipit maxime obcaecati laboriosam cum blanditiis ducimus ut consectetur id mollitia aperiam rerum.<span class="fa fa-quote-right right"></span></p>
+				<p>I got it and it's literally perfect More than worth it. Your packaging is A1 too❤️❤️❤️❤️<span class="fa fa-quote-right right"></span></p>
 			</div>
 
 			<div class="container">
 				<img src= "./images/testimonials.png" class="img">
 				<div class ="name">Dias Doll 3</div>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam neque reiciendis sit. Incidunt tempore vitae aliquam alias voluptatem accusantium magnam eos harum ipsam modi, quisquam illo facilis suscipit maxime obcaecati laboriosam cum blanditiis ducimus ut consectetur id mollitia aperiam rerum.<span class="fa fa-quote-right right"></span></p>
+				<p> Must say I love the top and the colour pops with my skin tone, Thanks for the amazing top. <span class="fa fa-quote-right right"></span></p>
 			</div>
 		</div>
 	</section>

@@ -43,15 +43,15 @@ $color=$array_info[6];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit product</title>
-  <link rel="prodstylesheet" href="prodstylesheet.css">
 
   <style>
-    body {
-      background-color: #d8befa;
-      text-align: center;
-      border: 10px solid #6b38ab;
-      padding: 50px;
-      margin: 100px;
+    body
+     {
+        background-color: #d8befa;
+        text-align: center;
+        border: 10px solid #6b38ab;
+        padding: 50px;
+        margin: 100px;
     }
   </style>
 

@@ -8,7 +8,7 @@
 
   <style>
 
-    /* Style the header */
+    /* Header Style */
     header {
     background-color: #790EAA;
     padding: 30px;
@@ -28,51 +28,49 @@
       <!-- Dias Designs Logo -->
       <div class="navbar-logo">
         <a href="" class="navbar-logo">
-         <img src="Images/Dias Designs Transparent Background.png" alt="Business logo" style="max-height: 100px" class = "py-2 px-2">
+         <img src="../images/Dias Designs Transparent Background.png" alt="Business logo" style="max-height: 100px" class = "py-2 px-2">
         </a>
       </div>
 
-    <!-- Navigation Bar Menu -->
-    <div id="navbar-menu" class="navbar-menu">
+      <!-- Navigation Bar Menu -->
+      <div id="navbar-menu" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item">
-                Home
-            </a>
+          <a class="navbar-item"  href="../index.php">
+            Home
+          </a>
 
-            <a class="navbar-item">
-                ABOUT US
-            </a>
-        
-            <a class="navbar-item">
-                PRODUCTS
-            </a>
+          <a class="navbar-item" href="../About-us/about.html">
+            ABOUT US
+          </a>
+          
+          <a class="navbar-item" href="../Products/Products.php">
+            PRODUCTS
+          </a>
 
-            <a class="navbar-item">
-                TESTIMONIALS
-            </a>
+          <a class="navbar-item" href="../testimonial.php">
+            TESTIMONIALS
+          </a>
 
-            <a class="navbar-item">
-                CONTACT US
-            </a>
+          <a class="navbar-item" href="#">
+            CONTACT US
+          </a>
 
-            <a class="navbar-item">
-                FAQs
-            </a>
-        </div>
+          <a class="navbar-item" href="../faq.php">
+            FAQs
+          </a>
+          </div>
 
+          <!-- Navigation Bar Menu Shopping Cart Icon -->
         <div class = "navbar-end">
-            <a class="navbar-item">
-                SEARCH
-            </a>
-
-            <a class="navbar-item">
-                SHOPPING CART
-            </a>
+          <a class="navbar-item">
+            SHOPPING CART
+          </a>
         </div>
-    </div>
-
+      </div>
+    
     </nav>
 
+    <!-- Contact Us Form Header -->
     <header> 
       <h1> CONTACT US </h1>
     </header>
@@ -82,13 +80,16 @@
         <div class="container">
           <div class="columns">
             <div class="column is-half">
-              <img src="Images/Contact Us Graphic.png" alt="Contact-Form-Photo">
+              <img src="contactus.png" alt="Contact-Form-Photo">
             </div>
 
             <div class="column is-half">
               <form action="https://formsubmit.co/kerene789@gmail.com" method="POST"> <!-- linl to FormSubmit api that allows the admin to recieve emails from form-->
+                
+                <!-- Contact Us Form Header -->
                 <h1 style="text-align:center">What's on your mind? </h1> 
 
+                <!-- Contact Us Form Firstname Field -->
                 <div class="field">
                   <label class="label">First Name</label>
                   <div class="control">
@@ -96,6 +97,7 @@
                   </div>
                 </div>
 
+                <!-- Contact Us Form Lastname Field -->
                 <div class="field">
                   <label class="label">Last Name</label>
                   <div class="control">
@@ -103,6 +105,7 @@
                   </div>
                 </div>
 
+                <!-- Contact Us Form Email Field -->
                 <div class="field">
                   <label class="label">Email</label>
                   <div class="control">
@@ -110,6 +113,7 @@
                   </div>
                 </div>
 
+                <!-- Contact Us Form Message Field -->
                 <div class="field">
                   <label class="label">Message</label>
                   <div class="control">
@@ -117,12 +121,14 @@
                   </div>
                 </div>
 
+                <!-- Contact Us Form Submit Button -->
                 <div class="field is-grouped">
                   <div class="control">
                     <button class="button is-link">Submit</button>
                   </div>
                 </div>  
-                </form>  
+
+              </form>  
             </div>
           </div>
         </div>
