@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="checkoutstyle.css">
+    <script src="#"></script>
+    <title>Checkout</title>
+</head>
+<body>
+    
+    <!--Navigation bar in header-->
+    <input type="checkbox" id="check" hidden>
+    <header>
+        <a href="index.php"><img src="./images/Dias Designs Transparent Background.png"  class="logo"></a>
+        <ul class="navigation">
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="testimonial.php">TESTIMONIALS</a></li>
+            <li><a href="#">CONTACT US</a></li>
+            <li><a href="faq.php">FAQs</a></li>
+            <li><a href="#">SHOPPING CART</a></li>  <img src= "./images/buy.png"/>
+        </ul>
+        <label for="check" hidden>
+            <i class="fas fa-bars menu-btn"></i>
+            <i class="fas fa-times close-btn"></i>
+            </label>
+    </header>
+
+    <br><br>
+
+    <section class="has-background">
+        <div class="hero-body">
+            <div class="containerA">
+                    <div class="center">
+                        <h3>Checkout</h3>
+                    </div>
+            </div>
+        </div>
+    </section>    
+
+
+    <div class="container">
+            <div class="columns">
+                <div class="column">
+                        <div class ="box has-background-light">
+                            <b>Billing Details</b>
+                            <br>
+                            <br>
+                                <label for="fname"First >First Name:</label>
+                                <input type="text" id="fname" name="fname">
+                                <br><br>
+                                <label for="lname">Last Name:</label>
+                                <input type="text" id="lname" name="lname">
+                                <br><br>
+                                <label for="address1">Address Line 1:</label>
+                                <input type="text" id="address1"name="address1">
+                                <br><br>
+                                <label for="address2">Address Line 2:</label>
+                                <input type="text" id="address2" name="address2">
+                                <br><br>
+                                <label for="city">City:</label>
+                                <input type="text" id="city" name="city">
+                                <br><br>
+                                <label for="country">Country:</label>
+                                <input type="text" id="country" name="country">
+                                <br><br>
+                                <label for="email">Email:</label>
+                                <input type="text" id="email" name="email">
+                                <br><br>
+                                <label for="number">Phone Number:</label>
+                                <input type="number" id="number" name="number">
+                                <br><br>
+                                <label for="notes">Order notes (optional):</label>
+                                <br>
+                                <textarea placeholder="Notes about your order e.g. special notes for delivery"></textarea>
+                        </div>
+                </div>
+
+                <div class="column">
+                            <div class ="box has-background-light">
+                                    <b>Your Order</b>
+                                    <br>
+                                    <br>
+                                    <h5>Cart<span class="price" style="color: black"> 2 items</span></h5>
+                                    <br>
+                                    <p><a href="#">Product</a><span class="price"> $1500</span></p>
+                                    <p><a href="#">Product</a><span class="price"> $3100</span></p>
+                                    <br>
+                                    <p>Total: <b>$4600</b></p>
+                                    <br>
+                                    <p>-------------------------------</p>
+                                    <br>
+                                    <p><b>IMPORTANT:</b> Please use your Order ID as the payment reference. 
+                                        Please note that your order will not be shipped until the funds have cleared in our account.</p>
+                                    <br>
+                                    <input type="button" value="Place Order" class="button">
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.title {
+    background-color: #E9BFF;
+  }
+
+  .center{
+      text-align:center;
+  }
+  
+  h1 {
+    color: black;    
+    height: 165px;
+    margin: 20px;
+    padding: 20px;
+    width: 1000px;
+  }
+
+  /* Style the header */
+.containerA {
+    background-color: #790EAA;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+.container {
+    background-color: #E9BFFD;
+}
