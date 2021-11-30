@@ -10,6 +10,14 @@ error_reporting(E_ALL | E_STRICT);
 ?>
 <!-- END OF DEBUGGING MODE -->
 
+<?php
+        $root = $_SERVER['DOCUMENT_ROOT'];
+        include("$root" . "/Dias-Design/root_credentials.php");
+        $all_products = $conn ->query("SELECT DISTINCT * FROM Products;");
+        $product_list = $all_products ->fetchAll(PDO::FETCH_ASSOC);  
+
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -20,16 +28,19 @@ error_reporting(E_ALL | E_STRICT);
         <?php
          $root = $_SERVER['DOCUMENT_ROOT'];
         //  include("$root" . "/Dias-Design/head.php");
+         include("$root" . "/Dias-Design/root_credentials.php");
          ?>
          
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link type="text/css" href="product-style.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
             integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
             crossorigin="anonymous"
         />
+        
         <title>Shopping Cart</title>
     </head>
 
@@ -74,254 +85,30 @@ error_reporting(E_ALL | E_STRICT);
 
         <section> <!---products section-->
             <div class="products-container">
-                <div id = "1" class="products">
-                    <img class = "image" src="prod1.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <div class="details">
-                            <button id = "prod1.jpg" class = "btn">Buy Now!</button>
-                            <button class = "more-information">Details</button>
+
+                <?php foreach($product_list as $product):?>
+                    <div id = "<?=$product['ProductID']?>" class="products">
+                        <img class = "image" src="prod<?=$product['ProductID']?>.jpg">
+                        <div class="overlay-img"></div>
+                        <div class="prod-description">
+                            <h2> <?=$product['Title']?></h2>
+                            <hr>
+                            <p><?=$product['Description']?></p>
+                            <div class="details">
+                                <button id = "prod<?=$product['ProductID']?>.jpg" class = "btn">Buy Now!</button>
+                                <button class = "more-information">Details</button>
+                            </div>
+                        </div>
+                        <div class = "price">
+                            <span>$ <?=$product['Price']?></span>
+                        </div>
+                        <div class="prod_db_id">
+                            <span><?=$product['ProductID']?></span>
                         </div>
                     </div>
-                    <div class = "price">
-                        <span>$2654</span>
-                    </div>
-                </div>
-                <div id = "2" class="products">
-                    <img id = "" class = "image" src="prod2.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod2.jpg" class = "btn">Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $2346 </span>
-                    </div>
-                </div>
-                <div id = '3' class="products">
-                    <img  class = "image" src="prod3.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod3.jpg" class = "btn">Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $6436 </span>
-                    </div>
-                </div>
-                <div id = '4' class="products">
-                    <img  class = "image" src="prod4.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final.</p>
-                        <button id = "prod4.jpg" class = "btn">Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $7886 </span>
-                    </div>
-                </div>
-                <div id = '5' class="products">
-                    <img  class = "image" src="prod5.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod5.jpg" class = "btn">Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $3219 </span>
-                    </div>
-                </div>
-                <div id = '6' class="products">
-                    <img   class = "image" src="prod6.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod6.jpg" class = "btn"> Buy Now! </button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $786 </span>
-                    </div>
-                </div>
-                <div id = '7' class="products">
-                    <img  class = "image" src="prod7.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod7.jpg" class = "btn"> Buy Now! </button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $1286 </span>
-                    </div>
-                </div>
-                <div id = '8' class="products">
-                    <img class = "image" src="prod8.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words </p>
-                        <button id = "prod8.jpg" class = "btn"> Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $6786 </span>
-                    </div>
-                </div>
-                <div id = '9' class="products">
-                    <img  class = "image" src="prod9.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod9.jpg" class = "btn"> Buy Now! </button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $786 </span>
-                    </div>
-                </div>
-                <div id = '10' class="products">
-                    <img  class = "image" src="prod10.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod10.jpg" class = "btn"> Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $2786 </span>
-                    </div>
-                </div>
-        
-                <div id = '11' class="products">
-                    <img  class = "image" src="prod11.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod11.jpg" class = "btn"> Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $3486 </span>
-                    </div>
-                </div>
-        
-                <div id = '12' class="products">
-                    <img class = "image" src="prod12.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod12.jpg" class = "btn">Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $1386 </span>
-                    </div>
-                </div>
-        
-                <div id = '13' class="products">
-                    <img class = "image" src="prod13.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod13.jpg" class = "btn"> Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $786 </span>
-                    </div>
-                </div>
-        
-                <div id = '14' class="products">
-                    <img class = "image" src="prod14.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod13.jpg" class = "btn">Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $2786 </span>
-                    </div>
-                </div>
-        
-                <div id = '15' class="products">
-                    <img  class = "image" src="prod15.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-                        <button id = "prod15.jpg" class = "btn">Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $1786 </span>
-                    </div>
-                </div>
-        
-                <div id = '16' class="products">
-                    <img  class = "image" src="prod16.jpg">
-                    <div class="overlay-img"></div>
-                    <div class="prod-description">
-                        <h2> Dias Designs </h2>
-                        <hr>
-                        <p>Lorem ipsum is, in printing, a series of meaningless words
-                        used on a provisional basis to calibrate a layout, the final</p>
-        
-                        <button id = "prod16.jpg" class = "btn">Buy Now!</button>
-                        <button class = "more-information">Details</button>
-                    </div>
-                    <div class = "price">
-                        <span> $786 </span>
-                    </div>
-                </div>
+                <?php endforeach;?>
+
+
             </div>
         </section>
         <script src="script.js"></script>

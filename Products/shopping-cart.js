@@ -1,3 +1,6 @@
+window.addEventListener('load',(e)=>{
+
+    
 let itemsInCart = []; //items in cart
 let single_item = document.querySelector("#buyItems");
 const total = document.querySelector("#sum-prices");
@@ -79,8 +82,16 @@ function updateProductInCart(product){
     }
 
     //if element is not already in cart, it will be added 
-    console.log(product);
     itemsInCart.push(product);
+    console.log(itemsInCart);
+
+    if(itemsInCart.length >0)
+    {
+        itemsInCart.forEach(item =>{
+            console.log(`prod_id: ${item.prod_db_id}`);
+            console.log(`quan: ${item.count}`);
+        });
+    }
 }
 
 /* loop through each button and add an event listener */
@@ -90,8 +101,8 @@ for (x of button) {
         var btn_parent = e.target.parentNode;
 
 		prod_div_id =  e.target.id.replace("prod","").replace(".jpg","");
-		//console.log("plzzz work",document.getElementById(prod_div_id).childNodes);
 		var prod_price = document.getElementById(prod_div_id).childNodes[7].childNodes[1].innerHTML.replace("$", ""); //price of item
+        let prod_db = document.getElementById(prod_div_id).childNodes[9].childNodes[1].innerHTML;
 
 		var prod_name = document.getElementById(prod_div_id).childNodes[5].childNodes[1].innerHTML;
        
@@ -101,6 +112,7 @@ for (x of button) {
             name: prod_name,
             image: prod_image,
             id: prod_image,
+            prod_db_id: prod_db,
             count: 1,
             price: +prod_price,//the '+' sign converts the price to int
             basePrice: +prod_price
@@ -134,9 +146,32 @@ single_item.addEventListener('click', (e)=>{
    
 });
 
+const CHECKOUT_BUTTON = $(".check-out");
+
+let cartData = {cart: itemsInCart};
+CHECKOUT_BUTTON.on('click',e=>{
+    $.ajax({
+        type: "POST",
+        url: "checkout.php",
+        data: cartData,
+        dataType: "html"
+    }).done(response=>{
+        alert(response);
+        itemsInCart = [];
+        $("#buyItems").empty();
+        $("#buyItems").append(" <h4 class=\"empty\">Your shopping cart is empty</h4> ");
+        $("#sum-prices").empty();
+        $("#sum-prices").append("$ 0");
+    }).fail(()=>{
+        alert('failed to place order');
+    });
+});
 
 
 
 
 
 
+
+
+});
