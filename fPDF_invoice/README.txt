@@ -1,0 +1,1 @@
+Important to have the font folder at the specified path in 'basic pdf file.php'
