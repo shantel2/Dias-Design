@@ -22,47 +22,49 @@ error_reporting(E_ALL | E_STRICT);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
+    <link rel="text/stylesheet" href="styles.css">
     
-    <title>Document</title>
 </head>
 <body>
 
-<?php
-    require('root_credentials.php');
-    function get_email($user_id){
-        include 'root_credentials.php';
-        $name =$conn->query("SELECT email FROM Users WHERE UserID = $user_id;");
-        $email= $name->fetchAll(PDO::FETCH_ASSOC);
-        return $email[0]["email"];
-    }
-
-
-    function get_product_name($product_id){
-        include 'root_credentials.php';
-        $name =$conn->query("SELECT Title FROM Products WHERE ProductID = $product_id;");
-        $product_title = $name->fetchAll(PDO::FETCH_ASSOC);
-        return $product_title[0]["Title"];
-    }
-
-    function invoice_available($order_id){
-        include 'root_credentials.php';
-        $invoice = $conn->query("SELECT file_name FROM Invoices WHERE OrderID = $order_id;");
-        $file_name = $invoice->fetchAll(PDO::FETCH_ASSOC);
-        $status = isset($file_name[0]["file_name"]);
-
-        if($status)
-        {
-       
-            return TRUE;
+    <title>Document</title>
+    <?php
+        require('root_credentials.php');
+        function get_email($user_id){
+            include 'root_credentials.php';
+            $name =$conn->query("SELECT email FROM Users WHERE UserID = $user_id;");
+            $email= $name->fetchAll(PDO::FETCH_ASSOC);
+            return $email[0]["email"];
         }
-        else{
 
 
-            return FALSE;
+        function get_product_name($product_id){
+            include 'root_credentials.php';
+            $name =$conn->query("SELECT Title FROM Products WHERE ProductID = $product_id;");
+            $product_title = $name->fetchAll(PDO::FETCH_ASSOC);
+            return $product_title[0]["Title"];
         }
-    }
-?>
-    <H1>Manage Order Page</H1>
+
+        function invoice_available($order_id_recv){
+            include 'root_credentials.php';
+            $order_id = (int)$order_id_recv;
+            $invoice = $conn->query("SELECT file_name FROM Invoices WHERE OrderID = $order_id;");
+            $file_name = $invoice->fetchAll(PDO::FETCH_ASSOC);
+            $status = isset($file_name[0]["file_name"]);
+
+            if($status)
+            {
+        
+                return TRUE;
+            }
+            else{
+
+
+                return FALSE;
+            }
+        }
+    ?>
+    <!-- <header>Manage Order Page</header> -->
     <table id="table">
         <tr>
             <th>Order ID</th>
@@ -76,9 +78,9 @@ error_reporting(E_ALL | E_STRICT);
 
         </tr>
         <?php
-        $all_orders = $conn ->query("SELECT DISTINCT * FROM Orders;");
-        $order_list = $all_orders ->fetchAll(PDO::FETCH_ASSOC);    
-    ?>
+            $all_orders = $conn ->query("SELECT DISTINCT * FROM Orders;");
+            $order_list = $all_orders ->fetchAll(PDO::FETCH_ASSOC);    
+        ?>
 
         <?php foreach($order_list as $order):?>
 
@@ -102,11 +104,6 @@ error_reporting(E_ALL | E_STRICT);
         <?php endforeach;?>
 
     </table>
-
-    <?php
-           
-                 
-    ?>
-
+        
 </body>
 </html>
