@@ -6,6 +6,8 @@ window.addEventListener('load',(e)=>{
         let INVOICE_BUTTON = $(`#invoice_${table.rows[i].cells[7].innerHTML}`);
         let UPLOAD_BUTTON = $(`#upload_${table.rows[i].cells[7].innerHTML}`);
         let VIEW_BUTTON = $(`#view_${table.rows[i].cells[7].innerHTML}`);
+
+        console.log(table.rows[i].lastElementChild.childNodes);
         
         
         UPDATE_BUTTON.on('click',e=>{
