@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="pop.js"></script>
+  </head>
+
+  <body>
+    <div class="max-container">
+        <div class="container">
+          <div class="title"><span>Sign-Up Form</span></div>
+          <img src="logo.png" alt="" class ="logo">
+          <form action="registration.php" method="GET" class="action">
+            <div class="Sign-up">
+              <input id = "email" type = "email" placeholder= "Email" name="email" required>
+            </div>
+            <div class="Sign-up">
+                <input type = "text" placeholder= "First Name" name="fname" required>
+              </div>
+              <div class="Sign-up">
+                <input type = "text" placeholder= "Last Name" name="lname" required>
+              </div>
+            <div class="Sign-up">
+              <input type="password" placeholder="Password"  name="password"required>
+             </div>
+             <div class="submit"  id = "submit">
+                    <input id= "btn" type= "submit" name = "Sign-Up">
+            </div>
+            <div class = "result">
+
+            </div>
+            </form>
+          </div>
+        </div>
+  </body>
+</html>

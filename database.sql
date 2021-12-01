@@ -14,7 +14,7 @@ CREATE TABLE `Users` (
    `Fname` varchar(35) NOT NULL,
    `Lname` varchar(35) NOT NULL,
    `email` varchar(70) NOT NULL,
-   `password` varchar(35) NOT NULL,
+   `password` varchar(128) NOT NULL,
    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
    PRIMARY KEY(`UserID`)
 );
