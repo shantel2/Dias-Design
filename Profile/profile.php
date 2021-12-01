@@ -69,6 +69,7 @@ error_reporting(E_ALL | E_STRICT);
     <title>Profile</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="profile.js"></script>
+<<<<<<< HEAD
 
 <style>
     header {
@@ -105,6 +106,8 @@ error_reporting(E_ALL | E_STRICT);
     }
 </style>
 
+=======
+>>>>>>> 219e09a71dc773d187c7fb77fc74d9a6c47cf7c1
 </head>
 <body>
     <h1>View Your Orders</h1>
@@ -119,7 +122,10 @@ error_reporting(E_ALL | E_STRICT);
                     <th>Total $</th>
                     <th>Order Date</th>
                     <th>Order Status</th>
+<<<<<<< HEAD
                     <th>Download</th>
+=======
+>>>>>>> 219e09a71dc773d187c7fb77fc74d9a6c47cf7c1
                 </tr>
 
                 <?php foreach($order_list as $order):?>
