@@ -14,7 +14,7 @@ error_reporting(E_ALL | E_STRICT);
 <?php
     $root = $_SERVER['DOCUMENT_ROOT'];
     include("$root" . "/Dias-Design/root_credentials.php");
-    
+    //this displays the invoice 
     $order_id_str = $_GET['order_id'];
     $order_id = (int)$order_id_str;
     if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($order_id)){
@@ -35,7 +35,7 @@ error_reporting(E_ALL | E_STRICT);
             echo $content;
         }
     } else {
-        header('location: profile.php');
+        header('location: profile.php'); //this redirects user to profile.php 
     }
 
 

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dias Designs Contact Form</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> <!-- link for access to bulma api for page design-->
-
+    <?php include('head.php')?>
   <style>
+
 
     /* Header Style */
     header {
@@ -24,6 +25,7 @@
   
   <body>
 
+    <!-- Navigation Bar Header -->
     <nav class="navbar">
       <!-- Dias Designs Logo -->
       <div class="navbar-logo">
@@ -39,7 +41,7 @@
             Home
           </a>
 
-          <a class="navbar-item" href="../About-us/about.html">
+          <a class="navbar-item" href="../About-us/about.php">
             ABOUT US
           </a>
           
@@ -57,13 +59,6 @@
 
           <a class="navbar-item" href="../faq.php">
             FAQs
-          </a>
-          </div>
-
-          <!-- Navigation Bar Menu Shopping Cart Icon -->
-        <div class = "navbar-end">
-          <a class="navbar-item">
-            SHOPPING CART
           </a>
         </div>
       </div>

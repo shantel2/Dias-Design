@@ -25,13 +25,13 @@ $order_status = filter_var($_POST['status'],FILTER_SANITIZE_STRING);
 
 
 <?php
-    if(!isset($order_id) || !isset($order_status)) 
+    if(!isset($order_id) || !isset($order_status)) //checks to see if value is set 
         {
             echo "<H2> A required field is missing to update the product</H2>";
         }
     else 
         {
-            $sql = "UPDATE Orders SET status ='$order_status' WHERE OrderID = $order_id;";
+            $sql = "UPDATE Orders SET status ='$order_status' WHERE OrderID = $order_id;"; //updates the order status 
 
             if($conn ->query($sql) == TRUE)
             {

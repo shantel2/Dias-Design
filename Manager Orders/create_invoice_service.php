@@ -18,7 +18,7 @@ require('root_credentials.php');
 <?php
 $order_id = $_GET['order_ID']; // coming from a hidden field not needing user input
 
-
+//gets the customer's name from the user table in the database 
 function get_customer_name($user_id){
     include 'root_credentials.php';
     $name =$conn->query("SELECT Fname,Lname FROM Users WHERE UserID = $user_id;");
@@ -27,7 +27,7 @@ function get_customer_name($user_id){
 
 
 }
-
+//gets customer's email from user table in the database 
 function get_customer_email($user_id){
     include 'root_credentials.php';
     $email =$conn->query("SELECT email FROM Users WHERE UserID = $user_id;");
@@ -36,14 +36,14 @@ function get_customer_email($user_id){
 
 
 }
-
+//gets products from product table 
 function get_item_ordered($product_id){
     include 'root_credentials.php';
     $product =$conn->query("SELECT Title FROM Products WHERE ProductID = $product_id;");
     $product_fetched = $product->fetchAll(PDO::FETCH_ASSOC);
     return $product_fetched[0]["Title"];
 }
-
+//check if variable is empty or if it has been set
 if(isset($order_id)){
     $sql = "SELECT * FROM Orders WHERE OrderID = $order_id;";
     $fetch = $conn ->query($sql);

@@ -32,7 +32,7 @@ if(isset($order_id)){
 else{
     echo "There was an issue in selecting the order";
 }
-
+    // receives customer name 
     function get_customer_name($user_id){
         include 'root_credentials.php';
         $name =$conn->query("SELECT Fname,Lname FROM Users WHERE UserID = $user_id;");
@@ -41,7 +41,7 @@ else{
 
 
     }
-    
+    // receives customer email 
     function get_customer_email($user_id){
         include 'root_credentials.php';
         $email =$conn->query("SELECT email FROM Users WHERE UserID = $user_id;");
@@ -50,7 +50,7 @@ else{
 
 
     }
-
+    //gets product name 
     function get_item_ordered($product_id){
         include 'root_credentials.php';
         $product =$conn->query("SELECT Title FROM Products WHERE ProductID = $product_id;");
@@ -66,7 +66,7 @@ else{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Update Page</title>
+    <title>Order Update Page</title> <!--displays management order page-->
 </head>
 <body>
     <h1>Update Order</h1>
@@ -94,7 +94,7 @@ else{
         <p>Order Total: $ <?=$order_total?></p> <br>
     </div>
 
-    <div>
+    <div> <!--The different options for updating order status -->
         <form action="manage_order_update_service.php" method="POST">
             <label for="status">Status</label>
             <select name="status" id="status">

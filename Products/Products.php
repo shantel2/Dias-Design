@@ -40,18 +40,82 @@ error_reporting(E_ALL | E_STRICT);
             integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
             crossorigin="anonymous"
         />
-        
+
         <title>Products</title>
     </head>
 
     <body>
-        <!--Navbar-->
-        <nav>
+
+    <!-- Navigation Bar Header -->
+    <nav class="navbar">
+      <!-- Dias Designs Logo -->
+      <div class="navbar-logo">
+        <a href="" class="navbar-logo">
+         <img src="../images/Dias Designs Transparent Background.png" alt="Business logo" style="max-height: 100px" class = "py-2 px-2">
+        </a>
+      </div>
+
+      <!-- Navigation Bar Menu -->
+      <div id="navbar-menu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item"  href="../index.php">
+            Home
+          </a>
+
+          <a class="navbar-item" href="../About-us/about.php">
+            ABOUT US
+          </a>
+          
+          <a class="navbar-item" href="../Products/Products.php">
+            PRODUCTS
+          </a>
+
+          <a class="navbar-item" href="../testimonial.php">
+            TESTIMONIALS
+          </a>
+
+          <a class="navbar-item" href="../Dias-Design/Contact-us/contact-us.php">
+            CONTACT US
+          </a>
+
+          <a class="navbar-item" href="../faq.php">
+            FAQs
+          </a>
+     
+          <!--Shopping cart--> 
+          <a class="shopping-cart">
+                <div class="sum-prices">
+                    <!--Shopping cart logo-->
+                    <i class="fas fa-shopping-cart shoppingCartButton"></i>
+                    <!--The total prices in shopping cart -->
+                    <h6 id="sum-prices">$0</h6>
+                </div>
+                <div class="producstOnCart hide">
+                    <div class="overlay"></div>
+                    <div class="top">
+                        <button id="closeButton">
+                            <i class="fas fa-times-circle"></i>
+                        </button>
+                        <h3>Cart</h3>
+                    </div>
+                    <ul id="buyItems"><!---section on the cart to check out items in cart-->
+                    <h4 class="empty">Your shopping cart is empty</h4> 
+                    </ul>      
+                    <button class="check-out">Check out</button>
+                </div>
+            </a> 
+        </div>
+        </div>        
+
+    </nav>
+
+    <!--Navbar-->
+    <nav>
             <div class="navbar-top">
                 <div>
-                    <button id="menuButton"></button>
+                    <button id="menuButton"><i class="fas fa-bars"></i></button>
                 </div>
-
+                <div>
                     <!--Shopping cart-->
                     <div class="shopping-cart">
                         <div class="sum-prices">
@@ -81,7 +145,6 @@ error_reporting(E_ALL | E_STRICT);
 
             </div>
         </nav>
-        </header> <!---End of header section-->
 
         <section> <!---products section-->
             <div class="products-container">

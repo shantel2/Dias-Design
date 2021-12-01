@@ -29,6 +29,36 @@
 				<div class ="name">Dias Doll 3</div>
 				<p> Must say I love the top and the colour pops with my skin tone, Thanks for the amazing top. <span class="fa fa-quote-right right"></span></p>
 			</div>
+	
+			<div class="container">
+				<img src= "./images/testimonials.png" class="img">
+				<div class ="name">Dias Doll 4</div>
+				<p> Thanks hun just collect it I'm so in love can't wait to wear it and send you pics, your work is so neat too  <span class="fa fa-quote-right right"></span></p>
+			</div>
+
+			<div class="container">
+				<img src= "./images/testimonials.png" class="img">
+				<div class ="name">Dias Doll 5</div>
+				<p> It is perfect 😍 i love it!!, Can't wait to slay it. I appreciate the note as well. 🙏🏾  <span class="fa fa-quote-right right"></span></p>
+			</div>
+
+			<div class="container">
+				<img src= "./images/testimonials.png" class="img">
+				<div class ="name">Dias Doll 6</div>
+				<p> I love love the top, it is so unique and it fits perfectly<span class="fa fa-quote-right right"></span></p>
+			</div>
+
+			<div class="container">
+				<img src= "./images/testimonials.png" class="img">
+				<div class ="name">Dias Doll 7</div>
+				<p> 💜💜💜💜💜 Thank yyyoooooouuu, i loveeeeee the presentation and all, too beautiful, keep up the great work mama<span class="fa fa-quote-right right"></span></p>
+			</div>
+
+			<div class="container">
+				<img src= "./images/testimonials.png" class="img">
+				<div class ="name">Dias Doll 8</div>
+				<p> Just got the swimsuit, I love itt 😍😍😍, too sexy, Gurl this is like perfecttttt, like perfectionnnn,  Yeaaa imma need more  <span class="fa fa-quote-right right"></span></p>
+			</div>
 		</div>
 	</section>
 </body>

@@ -9,6 +9,32 @@
     list-style-type: none;
 }
 
+.logo{
+    max-width: 100px;
+    margin-left: 2rem;
+}
+
+#hide{
+    display: none;
+}
+
+#navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+a{
+    margin: 1rem;
+    color: black
+}
+
+a:hover{
+    color: rgb(165, 129, 165)
+}
+
 #menuButton{
     display: none;
 }
@@ -35,6 +61,7 @@ body::webkit-scrollbar {
 
 
 /*shopping cart icon*/
+/*
 .navbar-top > div {
     margin-right: 10px;
     display: flex;
@@ -47,13 +74,17 @@ body::webkit-scrollbar {
 .navbar-top .shopping-cart {
     margin-left: 10px;
     font-size: 1.4rem;
-}
+} */
 
+.shopping-cart{
+    display: inline;
+}
+#align-left{
+    display:flex;
+    justify-content: flex-end;
+}
 .shopping-cart .sum-prices {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display:inline;
 }
 
 #sum-prices {

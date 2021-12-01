@@ -25,7 +25,7 @@ error_reporting(E_ALL | E_STRICT);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit product</title>
   <link rel="prodstylesheet" href="styles.css">
-    <title>File Upload</title>
+    <title>File Upload</title> <!--uploads an invoice-->
     <style>
     body {
       background-color: #d8befa;
@@ -41,14 +41,14 @@ error_reporting(E_ALL | E_STRICT);
         Select an Invoice to Upload
     </h2>
  
-<form action="upload.php" method="POST" enctype="multipart/form-data">
+<form action="upload.php" method="POST" enctype="multipart/form-data"> 
     <div class="">
         <label for="title">Title</label>
-        <input type="text" name="title">
+        <input type="text" name="title"> <!--User inserts file name-->
     </div>
 
     <div>
-        <input type="file" name="pdf_file">
+        <input type="file" name="pdf_file"> <!--User selects file-->
         <input type="hidden" name="MAX_FILE_SIZE" value= "67108864"/>
         <input type="hidden" name="order_id" value= <?=$order_id?>/>
 

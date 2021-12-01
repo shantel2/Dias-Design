@@ -66,6 +66,7 @@ h1 {
     <title>Document</title>
     <?php
         require('root_credentials.php');
+        //this is getting users email from user table 
         function get_email($user_id){
             include 'root_credentials.php';
             $name =$conn->query("SELECT email FROM Users WHERE UserID = $user_id;");
@@ -73,14 +74,15 @@ h1 {
             return $email[0]["email"];
         }
 
-
+        //this is matching productid and getting product name from Products table
         function get_product_name($product_id){
             include 'root_credentials.php';
             $name =$conn->query("SELECT Title FROM Products WHERE ProductID = $product_id;");
             $product_title = $name->fetchAll(PDO::FETCH_ASSOC);
             return $product_title[0]["Title"];
         }
-
+        
+        //this function receives the file name
         function invoice_available($order_id_recv){
             include 'root_credentials.php';
             $order_id = (int)$order_id_recv;
@@ -118,20 +120,21 @@ h1 {
             $order_list = $all_orders ->fetchAll(PDO::FETCH_ASSOC);    
         ?>
 
-        <?php foreach($order_list as $order):?>
+        <?php foreach($order_list as $order):?> <!-- displays the order list -->
 
             <tr>
-                <td><?=$order['OrderID']?></td>
-                <td><?=get_email($order['UserID'])?></td>
-                <td><?=get_product_name($order['ProductID'])?></td>
-                <td><?=$order['quantity']?></td>
-                <td>$ <?=$order['total_cost']?></td>
-                <td><?=$order['status']?></td>
-                <td><button id="<?=$order['OrderID']?>">Update</button></td>
+                <td><?=$order['OrderID']?></td> <!--display order id-->
+                <td><?=get_email($order['UserID'])?></td> <!--display customer email-->
+                <td><?=get_product_name($order['ProductID'])?></td> <!--displays product name -->
+                <td><?=$order['quantity']?></td> <!--display quantity of items-->
+                <td>$ <?=$order['total_cost']?></td> <!--displays order total cost-->
+                <td><?=$order['status']?></td> <!--displays order status-->
+                <td><button id="<?=$order['OrderID']?>">Update</button></td> <!--This button is used to update order status -->
                 <td style ="display: none"><?=$order['OrderID']?></td>
-                <td><button id="invoice_<?=$order['OrderID']?>"> Create Invoice</button></td>
-                <td><button id="upload_<?=$order['OrderID']?>"> Upload Invoice</button></td>
-                <td><button id="view_<?=$order['OrderID']?>" <?php if(!invoice_available($order['OrderID'])){echo " disabled ";}?>>Download Invoice</button></td>
+                <td><button id="invoice_<?=$order['OrderID']?>"> Create Invoice</button></td> <!-- This button generates the invoice -->
+                <td><button id="upload_<?=$order['OrderID']?>"> Upload Invoice</button></td> <!-- This button uploads the invoice -->
+                <td><button id="view_<?=$order['OrderID']?>" <?php if(!invoice_available($order['OrderID'])){echo " disabled ";}?>>Download Invoice</button></td> 
+                <!--This button allows you to download a pdf version of the invoice -->
 
 
 
