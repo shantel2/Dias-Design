@@ -56,66 +56,37 @@ error_reporting(E_ALL | E_STRICT);
       </div>
 
       <!-- Navigation Bar Menu -->
-      <div id="navbar-menu" class="navbar-menu">
+    <div id="navbar-menu" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item"  href="../index.php">
-            Home
-          </a>
+                <a class="navbar-item"  href="../index.php">
+                    Home
+                </a>
 
-          <a class="navbar-item" href="../About-us/about.php">
-            ABOUT US
-          </a>
-          
-          <a class="navbar-item" href="../Products/Products.php">
-            PRODUCTS
-          </a>
+                <a class="navbar-item" href="../About-us/about.php">
+                    ABOUT US
+                </a>
+                
+                <a class="navbar-item" href="../Products/Products.php">
+                    PRODUCTS
+                </a>
 
-          <a class="navbar-item" href="../testimonial.php">
-            TESTIMONIALS
-          </a>
+                <a class="navbar-item" href="../testimonial.php">
+                    TESTIMONIALS
+                </a>
 
-          <a class="navbar-item" href="../Dias-Design/Contact-us/contact-us.php">
-            CONTACT US
-          </a>
+                <a class="navbar-item" href="../Dias-Design/Contact-us/contact-us.php">
+                    CONTACT US
+                </a>
 
-          <a class="navbar-item" href="../faq.php">
-            FAQs
-          </a>
-     
-          <!--Shopping cart--> 
-          <a class="shopping-cart">
-                <div class="sum-prices">
-                    <!--Shopping cart logo-->
-                    <i class="fas fa-shopping-cart shoppingCartButton"></i>
-                    <!--The total prices in shopping cart -->
-                    <h6 id="sum-prices">$0</h6>
-                </div>
-                <div class="producstOnCart hide">
-                    <div class="overlay"></div>
-                    <div class="top">
-                        <button id="closeButton">
-                            <i class="fas fa-times-circle"></i>
-                        </button>
-                        <h3>Cart</h3>
-                    </div>
-                    <ul id="buyItems"><!---section on the cart to check out items in cart-->
-                    <h4 class="empty">Your shopping cart is empty</h4> 
-                    </ul>      
-                    <button class="check-out">Check out</button>
-                </div>
-            </a> 
-        </div>
-        </div>        
-
-    </nav>
-
-    <!--Navbar-->
-    <nav>
-            <div class="navbar-top">
+                <a class="navbar-item" href="../faq.php">
+                    FAQs
+                </a>
+    
+          <div class="navbar-top">
                 <div>
                     <button id="menuButton"><i class="fas fa-bars"></i></button>
                 </div>
-                <div>
+                <div id = "cart-things">
                     <!--Shopping cart-->
                     <div class="shopping-cart">
                         <div class="sum-prices">
@@ -129,7 +100,7 @@ error_reporting(E_ALL | E_STRICT);
                     </div>
                 </div>
             </div>
-            </div>
+
             <div class="producstOnCart hide">
                 <div class="overlay"></div>
                 <div class="top">
@@ -144,11 +115,10 @@ error_reporting(E_ALL | E_STRICT);
                 <button class="check-out">Check out</button>
 
             </div>
-        </nav>
+        </nav> <!--Navbar-->
 
         <section> <!---products section-->
             <div class="products-container">
-
                 <?php foreach($product_list as $product):?>
                     <div id = "<?=$product['ProductID']?>" class="products">
                         <img class = "image" src="prod<?=$product['ProductID']?>.jpg">
@@ -169,7 +139,6 @@ error_reporting(E_ALL | E_STRICT);
                         </div>
                     </div>
                 <?php endforeach;?>
-
 
             </div>
         </section>

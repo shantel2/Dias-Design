@@ -12,6 +12,7 @@
 .logo{
     max-width: 100px;
     margin-left: 2rem;
+    height: 5rem;
 }
 
 #hide{
@@ -41,29 +42,19 @@ a:hover{
 
 html {
     -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-    display: none;
 }
 
 body {
     display: flex;
     flex-direction: column;
     -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none;
-}
-
-body::webkit-scrollbar {
-    display: none;
 }
 
 
 /*shopping cart icon*/
-/*
+
 .navbar-top > div {
-    margin-right: 10px;
+    margin-right: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -74,7 +65,11 @@ body::webkit-scrollbar {
 .navbar-top .shopping-cart {
     margin-left: 10px;
     font-size: 1.4rem;
-} */
+} 
+
+.navbar-start{
+    margin-left: 30rem;
+}
 
 .shopping-cart{
     display: inline;
@@ -93,6 +88,7 @@ body::webkit-scrollbar {
 
 .sum-prices h6 {
     font-size: 0.9rem;
+    display: inline;
 }
 
 .shoppingCartButton {
@@ -121,10 +117,6 @@ body::webkit-scrollbar {
     right: 0;
     text-align: center;
     animation: fade 1s;
-}
-
-.producstOnCart::-webkit-scrollbar {
-    display: none;
 }
 
 @keyframes fade {
