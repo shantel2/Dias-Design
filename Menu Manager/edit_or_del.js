@@ -1,4 +1,4 @@
-window.addEventListener('load',(e)=>{
+window.addEventListener('load',e=>{
 
     let table = document.getElementById('table');
 
@@ -11,7 +11,7 @@ window.addEventListener('load',(e)=>{
     
             DELETE_BUTTON.on("click",e=>{
                 let cnfm = confirm("Are you sure you want to delete this Item?");
-                if(cnfm == TRUE){
+                if(cnfm == true){
     
                     let productID = e.target.id.slice(6); // Slices of the word 'delete from the ID'
                     
@@ -57,8 +57,6 @@ window.addEventListener('load',(e)=>{
  location.reload();
 }
 
-$( function() {
-    $( "#dialog" ).dialog();
-  } );
+
 
 });

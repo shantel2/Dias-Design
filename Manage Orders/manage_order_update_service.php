@@ -35,7 +35,11 @@ $order_status = filter_var($_POST['status'],FILTER_SANITIZE_STRING);
 
             if($conn ->query($sql) == TRUE)
             {
-                echo "<h3> Record Successfully updated!</h3>";
+                echo "<script>alert('Record Successfully updated!');</script>";
+                echo "<script> window.location.href = '../Manage Orders/manage_order_page.php'</script>";
+
+
+
 
             }
 

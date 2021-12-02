@@ -1,3 +1,52 @@
+<?php
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+?>
+
+<?php
+
+session_start();
+    
+  
+    
+    function direct(){
+        if(isset($_SESSION['uid'])){
+             echo "../Profile/profile.php";
+        }
+        else{
+             echo "Authen/login.html";
+        }
+    }
+
+    function name_or_login(){
+      $root = $_SERVER['DOCUMENT_ROOT'];
+      include("$root" . "/Dias-Design/root_credentials.php");
+
+        if(isset($_SESSION['uid']))
+        {
+            $id = $_SESSION['uid'];
+            $sql = "SELECT email FROM Users WHERE UserID = $id;";
+            $fetched = $conn ->query($sql);
+            $email = $fetched->fetchAll(PDO::FETCH_ASSOC);
+            $dis = $email[0]["email"];
+            echo "$dis";
+       }
+       else{
+            echo "Login";
+       }
+    }
+
+    function admin_check(){
+      if(!isset($_SESSION['adminID']))
+      {
+          echo "hidden";
+     }
+      
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,7 +54,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dias Designs Contact Form</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> <!-- link for access to bulma api for page design-->
-    <?php include('head.php')?>
   <style>
 
 
@@ -60,7 +108,23 @@
           <a class="navbar-item" href="../faq.php">
             FAQs
           </a>
+
+          <a class="navbar-item" href="../Manage Orders/manage_order_page.php " <?php admin_check();?> >
+          Orders
+        </a>
+          
+          <a class="navbar-item" href="../Menu Manager/del_or_edit_product.php " <?php admin_check();?> >
+          Products
+        </a>
+
+
         </div>
+        
+        <div class="navbar-end">
+            <a href= <?php direct()?> class="navbar-item">
+               <?php name_or_login();?>
+            </a>
+          </div>
       </div>
     
     </nav>
@@ -79,7 +143,7 @@
             </div>
 
             <div class="column is-half">
-              <form action="https://formsubmit.co/kerene789@gmail.com" method="POST"> <!-- linl to FormSubmit api that allows the admin to recieve emails from form-->
+              <form action="#" method="POST"> <!-- linl to FormSubmit api that allows the admin to recieve emails from form-->
                 
                 <!-- Contact Us Form Header -->
                 <h1 style="text-align:center">What's on your mind? </h1> 

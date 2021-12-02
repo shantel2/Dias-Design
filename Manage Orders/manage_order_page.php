@@ -10,6 +10,48 @@ error_reporting(E_ALL | E_STRICT);
 ?>
 <!-- END OF DEBUGGING MODE -->
 
+<?php
+
+session_start();
+    
+  
+    
+    function direct(){
+        if(isset($_SESSION['uid'])){
+             echo "../Profile/profile.php";
+        }
+        else{
+             echo "Authen/login.html";
+        }
+    }
+
+    function name_or_login(){
+      $root = $_SERVER['DOCUMENT_ROOT'];
+      include("$root" . "/Dias-Design/root_credentials.php");
+
+        if(isset($_SESSION['uid']))
+        {
+            $id = $_SESSION['uid'];
+            $sql = "SELECT email FROM Users WHERE UserID = $id;";
+            $fetched = $conn ->query($sql);
+            $email = $fetched->fetchAll(PDO::FETCH_ASSOC);
+            $dis = $email[0]["email"];
+            echo "$dis";
+       }
+       else{
+            echo "Login";
+       }
+    }
+
+    function admin_check(){
+      if(!isset($_SESSION['adminID']))
+      {
+          echo "hidden";
+     }
+      
+    }
+
+?>
 
 
 
@@ -21,6 +63,7 @@ error_reporting(E_ALL | E_STRICT);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> <!-- link for access to bulma api for page design-->
     <script src="script.js"></script>
 
 <style>
@@ -102,7 +145,64 @@ h1 {
             }
         }
     ?>
-    <h1>Manage Order Page</h1>
+    
+    <!-- Navigation Bar Header -->
+    <nav class="navbar">
+      <!-- Dias Designs Logo -->
+      <div class="navbar-logo">
+        <a href="" class="navbar-logo">
+         <img src="../images/Dias Designs Transparent Background.png" alt="Business logo" style="max-height: 100px" class = "py-2 px-2">
+        </a>
+      </div>
+
+      <!-- Navigation Bar Menu -->
+      <div id="navbar-menu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item"  href="../index.php">
+            Home
+          </a>
+
+          <a class="navbar-item" href="../About-us/about.php">
+            ABOUT US
+          </a>
+          
+          <a class="navbar-item" href="../Products/Products.php">
+            PRODUCTS
+          </a>
+
+          <a class="navbar-item" href="../testimonial.php">
+            TESTIMONIALS
+          </a>
+
+          <a class="navbar-item" href="../Contact-us/contact-us.php">
+            CONTACT US
+          </a>
+
+          <a class="navbar-item" href="../faq.php">
+            FAQs
+          </a>
+
+          <a class="navbar-item" href="../Manage Orders/manage_order_page.php " <?php admin_check();?> >
+          Orders
+        </a>
+          
+          <a class="navbar-item" href="../Menu Manager/del_or_edit_product.php " <?php admin_check();?> >
+          Products
+        </a>
+
+
+        </div>
+        
+        <div class="navbar-end">
+            <a href= <?php direct()?> class="navbar-item">
+               <?php name_or_login();?>
+            </a>
+          </div>
+      </div>
+    
+    </nav>
+
+    <h1 class="title">Manage Order Page</h1>
     <table id="table">
         <tr>
             <th>Order ID</th>

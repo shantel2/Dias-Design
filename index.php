@@ -7,6 +7,8 @@
     <?php include('head.php') ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <title> Dias Designs</title>
 </head>
 <body>
@@ -15,7 +17,13 @@
             <div class= "text">
                 <h2>DIAS <br><span>DESIGNS</span></h2>
                 <p>Welcome to Dias Designs, where we provide self-made clothing items made from crochet.</p>
-                <button> SHOP NOW </button>
+                <button onclick="shopping()" > SHOP NOW </button>
+                <script>
+                    function shopping(){
+
+                        window.location.href = "Products/Products.php";
+                    }
+                </script>
             </div>
             <div class= "main-img">
                 <div class = "img active">

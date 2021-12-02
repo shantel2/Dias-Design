@@ -23,10 +23,13 @@ $sql = "INSERT INTO Users(Fname,Lname, email, password)VALUES('$fname','$lname',
 
 if($conn ->query($sql) == TRUE){
   // header('location: http://localhost/useraccounts/signup.html');
-  echo "Registered";
+  echo"<script>alert('Successfully Registered!');</script>";
+  echo "<script> location.href = 'login.html'</script>";
 } 
 else {
-   echo "Error registering";
+  echo"<script>alert('There was an issue while registering. Please try again.');</script>";
+  echo "<script> location.href = 'registration.php'</script>";
+
 }   
  
 ?>

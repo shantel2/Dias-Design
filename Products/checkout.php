@@ -1,6 +1,12 @@
 
 
 <?php
+    session_start();
+    if(!isset($_SESSION['uid'])){
+        echo "Please Login to continue!";
+   }
+    else{   
+
         $root = $_SERVER['DOCUMENT_ROOT'];
         include("$root" . "/Dias-Design/root_credentials.php");
 
@@ -19,8 +25,8 @@
 
             $total = floatval($price[0]["Price"] * $quantity);
 
-
-            $order_query = "INSERT INTO Orders(UserID,ProductID,quantity,total_cost,status)VALUES(1,$prod_id,$quantity,$total,'Pending');";
+            $uid = $_SESSION['uid'];
+            $order_query = "INSERT INTO Orders(UserID,ProductID,quantity,total_cost,status)VALUES($uid,$prod_id,$quantity,$total,'Pending');";
 
             if($conn ->query($order_query) == TRUE){
                 $Process_status = TRUE;
@@ -37,7 +43,8 @@
             echo "Your Order Has Been Placed!";
         }else{
             echo "There was an Issue processing your order.";            
-        }        
+        } 
+    }       
 
 ?>
 

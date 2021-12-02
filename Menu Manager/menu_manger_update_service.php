@@ -43,12 +43,15 @@ $colour = filter_var($_POST['colour'],FILTER_SANITIZE_STRING);
 
             if($conn ->query($sql) == TRUE)
             {
-                echo "<h3> Records Successfully Updated!</h3>";
+                echo "<script>alert('Record Successfully updated!');</script>";
+                echo "<script> window.location.href = '../Menu Manager/del_or_edit_product.php'</script>";
+
 
             }
 
             else {
-                echo "<h3>An Error has occured, Item not Updated<h3>";
+                echo "<script>alert('An Error has occured, Item not Updated!');</script>";
+                echo "<script> window.location.href = '../Menu Manager/del_or_edit_product.php'</script>";
             }
 
         }

@@ -29,7 +29,7 @@ error_reporting(E_ALL | E_STRICT);
         
     }
     else{
-        echo "There was an issue in selecting the order";
+        echo "<script> alert('There was an issue in selecting the order');</script>";        
     }
 
 
@@ -38,7 +38,8 @@ error_reporting(E_ALL | E_STRICT);
 
         //a $_FILES 'error' value of zero means success. Anything else and something wrong with attached file.
         if ($_FILES['pdf_file']['error'] != 0) {
-        echo 'Something wrong with the file.';
+        echo "<script> alert('Something wrong with the file');</script>";
+        echo "<script> window.location.href = '../Manage Orders/file-upload.php'</script>";
         } 
         else { //pdf file uploaded okay.
             //project_name supplied from the form field
@@ -61,11 +62,10 @@ error_reporting(E_ALL | E_STRICT);
                     $stmt->bindParam(':content', $pdf_blob, PDO::PARAM_LOB);
 
                     if ($stmt->execute() === FALSE) {
-                        echo 'Could not save information to the database';
+                        echo "<script>alert('Could not save information to the database');</script>";
                     }
                      else {
-                        echo "<h2>Invoice Uploaded</h2>";
-
+                        echo "<script>alert('Invoice Uploaded');</script>";
                     }
                 } catch (PDOException $e) {
                     echo 'Database Error '. $e->getMessage(). ' in '. $e->getFile().
@@ -73,12 +73,12 @@ error_reporting(E_ALL | E_STRICT);
                 }
             } else {
                 //fopen() was not successful in opening the .pdf file for reading.
-                echo 'Could not open the attached pdf file';
+                echo "<script>alert('Could not open the attached pdf file');</script>";
             }
         }
        } else {
             //submit button was not clicked. No direct script navigation.
-            header('Location: file-upload.php');
+            echo "<script> window.location.href = '../Manage Orders/file-upload.php'</script>";
        }
 
 ?>

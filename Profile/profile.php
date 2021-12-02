@@ -1,7 +1,11 @@
-<!--  -->
-<!-- WRAP ALL OF  THE BELOW IN A SESSION AUTHENTICATION -->
-<!--  -->
 
+<?php 
+    session_start();
+    if(!isset($_SESSION['uid'])){
+    header("Location: /Dias-Design/index.php");        
+}
+
+?>
 
 <!-- DEBUGGING MODE -->
 <?php
@@ -15,7 +19,7 @@ error_reporting(E_ALL | E_STRICT);
         include("$root" . "/Dias-Design/root_credentials.php");
 
         // $uid = $_SESSION['userID'];
-        $uid = 1;
+        $uid = $_SESSION['uid'];
 
         $user_orders = $conn ->query("SELECT  * FROM Orders WHERE UserID = $uid;"); //Selects orders related to usersid 
         $order_list = $user_orders ->fetchAll(PDO::FETCH_ASSOC); 
@@ -68,20 +72,11 @@ error_reporting(E_ALL | E_STRICT);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <script src="profile.js"></script>
-<<<<<<< HEAD
 
 <style>
-    header {
-        background-color: #790EAA;
-        padding: 20px;
-        text-align: center;
-        font-size: 20px;
-        color: white;
-    }
-    h1{
-        text-align: center;
-    }
+
 
     /* Table Format*/
     #table {
@@ -106,11 +101,57 @@ error_reporting(E_ALL | E_STRICT);
     }
 </style>
 
-=======
->>>>>>> 219e09a71dc773d187c7fb77fc74d9a6c47cf7c1
 </head>
+
+
 <body>
-    <h1>View Your Orders</h1>
+     <!--Navigation Bar Menu -->
+  <nav class="navbar">
+      <!-- Dias Designs Logo -->
+      <div class="navbar-logo">
+        <a href="" class="navbar-logo">
+         <img src="../images/Dias Designs Transparent Background.png" alt="Business logo" style="max-height: 100px" class = "py-2 px-2">
+        </a>
+      </div>
+
+      <!-- Navigation Bar Menu -->
+      <div id="navbar-menu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item"  href="../index.php">
+            Home
+          </a>
+
+          <a class="navbar-item" href="../About-us/about.php">
+            ABOUT US
+          </a>
+          
+          <a class="navbar-item" href="../Products/Products.php">
+            PRODUCTS
+          </a>
+
+          <a class="navbar-item" href="../testimonial.php">
+            TESTIMONIALS
+          </a>
+
+          <a class="navbar-item" href="../Contact-us/ContactUs.html">
+            CONTACT US
+          </a>
+
+          <a class="navbar-item" href="../faq.php">
+            FAQs
+          </a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+            <a class="navbar-item" href="../Authen/logout.php">
+            LOGOUT
+            </a>
+            </div>
+        </div>
+      </div>
+    
+    </nav>
+    <h1 class = "title">View Your Orders</h1>
     <?php if($order_list_len <= 0):?>
             <h2>You have not placed an order as yet...</h2>
         <?php else:?>       
@@ -122,10 +163,7 @@ error_reporting(E_ALL | E_STRICT);
                     <th>Total $</th>
                     <th>Order Date</th>
                     <th>Order Status</th>
-<<<<<<< HEAD
                     <th>Download</th>
-=======
->>>>>>> 219e09a71dc773d187c7fb77fc74d9a6c47cf7c1
                 </tr>
 
                 <?php foreach($order_list as $order):?>
@@ -150,3 +188,5 @@ error_reporting(E_ALL | E_STRICT);
 
 </body>
 </html>
+
+                

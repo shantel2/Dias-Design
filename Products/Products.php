@@ -27,7 +27,6 @@ error_reporting(E_ALL | E_STRICT);
         <!-- Include the header file -->
         <?php
          $root = $_SERVER['DOCUMENT_ROOT'];
-        //  include("$root" . "/Dias-Design/head.php");
          include("$root" . "/Dias-Design/root_credentials.php");
          ?>
          
@@ -41,6 +40,7 @@ error_reporting(E_ALL | E_STRICT);
             crossorigin="anonymous"
         />
 
+
         <title>Products</title>
     </head>
 
@@ -50,7 +50,7 @@ error_reporting(E_ALL | E_STRICT);
     <nav class="navbar">
       <!-- Dias Designs Logo -->
       <div class="navbar-logo">
-        <a href="" class="navbar-logo">
+        <a href="../index.php" class="navbar-logo">
          <img src="../images/Dias Designs Transparent Background.png" alt="Business logo" style="max-height: 100px" class = "py-2 px-2">
         </a>
       </div>
@@ -58,30 +58,7 @@ error_reporting(E_ALL | E_STRICT);
       <!-- Navigation Bar Menu -->
     <div id="navbar-menu" class="navbar-menu">
         <div class="navbar-start">
-                <a class="navbar-item"  href="../index.php">
-                    Home
-                </a>
 
-                <a class="navbar-item" href="../About-us/about.php">
-                    ABOUT US
-                </a>
-                
-                <a class="navbar-item" href="../Products/Products.php">
-                    PRODUCTS
-                </a>
-
-                <a class="navbar-item" href="../testimonial.php">
-                    TESTIMONIALS
-                </a>
-
-                <a class="navbar-item" href="../Dias-Design/Contact-us/contact-us.php">
-                    CONTACT US
-                </a>
-
-                <a class="navbar-item" href="../faq.php">
-                    FAQs
-                </a>
-    
           <div class="navbar-top">
                 <div>
                     <button id="menuButton"><i class="fas fa-bars"></i></button>

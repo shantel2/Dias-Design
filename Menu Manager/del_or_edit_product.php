@@ -1,13 +1,23 @@
+<!--  -->
+<!-- WRAP ALL OF  THE BELOW IN A SESSION AUTHENTICATION -->
+<!--  -->
+
+
+<!-- DEBUGGING MODE -->
 <?php
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 ?>
+<!-- END OF DEBUGGING MODE -->
+
+
 
 <?php
+    session_start();
+    require('root_credentials.php');
 
-session_start();
-    
-  
+
+      
     
     function direct(){
         if(isset($_SESSION['uid'])){
@@ -43,30 +53,25 @@ session_start();
      }
       
     }
-
 ?>
 
 
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About Us</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <!-- <link rel="stylesheet" href="about.css"> -->
-    <!-- <link rel="stylesheet" href="../styles.css"> -->
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="edit_or_del.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> 
 
-    <script src="#"></script>
 </head>
-
 <body>
 
-  <!--Navigation Bar Menu -->
-  <nav class="navbar">
+
+          <!-- Navigation Bar Header -->
+    <nav class="navbar">
       <!-- Dias Designs Logo -->
       <div class="navbar-logo">
         <a href="" class="navbar-logo">
@@ -109,52 +114,64 @@ session_start();
           Products
         </a>
 
+
         </div>
+        
         <div class="navbar-end">
-          <a href= <?php direct()?> class="navbar-item">
-           <?php name_or_login();?>
-          </a>
-        </div>
+            <a href= <?php direct()?> class="navbar-item">
+               <?php name_or_login();?>
+            </a>
+          </div>
       </div>
     
     </nav>
 
-    <section>
-      <div class="columns">
-        <div class="column" id="founder_image">
-          <img src="https://www.flairja.com/wp-content/uploads/5057335_-Copy-1-759x1024.jpg" align="left" alt="Dias Designs logo">
-        </div>
 
-        <div class="column" id="founder_comment">
-          <div class="content">
-            <div class = "article">
-              <h1><center><b>About Us</b></center></h1>
-              <h3><center>Hi, I am Danae!</h3></center>
-              <span class = "has-text-link">
-                <h1><center>Welcome to Dias Designs!</center></h1>
-              </span>
-              </div>
-              <div class="box has-background-danger-light">
-                <div class="image-section"></div>
-                  <p style="text-align:right;">  
-                  <h5>I founded Dias Designs with the aim of designing clothing that women feel sexy and empowered while wearing!</h5></p>
-                  <br>
-                  <h5>What started as a summer hobby has grown into an entreprenurial ingenuity.</h5>
-                  <br>
-                  <h5>Dias Designs has evolved from cropped tops and keychains into swimwear and handbags and there is more in store 
-                  <b> so stay tuned!</b></h5>
-                </div>
-    
-              <div class="box has-text-centered">
-                <a class="button is-primary" href= "../Products/Products.php">Shop Now</a>
-              </div>
-            </div> 
+    <title>Update Product</title>
 
-          </div>    
-        </div>
-      </div>
-    </section> 
+    <?php
+        $all_products = $conn ->query("SELECT DISTINCT * FROM Products;");
+        $product_list = $all_products ->fetchAll(PDO::FETCH_ASSOC);    
+    ?>
 
- 
+<style>
+    header {
+    background-color: #790EAA;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+</style>
+    <header> 
+        <h1> Product Management </h1>
+        <h2> (Deletion or Edition of product content) </h2>
+    </header>
+
+    <table class= "table" id="table">
+        <tr>
+
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Product Price</th>
+            <th>Remove Option</th>
+            <th>Edit Option</th>
+
+        </tr>
+
+        <?php foreach($product_list as $product):?>
+            <tr>
+                <td><?=$product['Title']?></td>
+                <td><?=$product['Description']?></td>
+                <td><?=$product['Price']?></td>
+                <td><button class="button" id= "delete<?=$product['ProductID']?>" >Delete</button></td>
+                <td><button class="button" id= "edit<?=$product['ProductID']?>" >Edit</button></td>
+                <td style ="display: none"><?=$product['ProductID']?></td> 
+            </tr>
+
+        <?php endforeach;?>
+
+    </table>
+
 </body>
 </html>

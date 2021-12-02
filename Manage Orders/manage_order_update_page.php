@@ -66,10 +66,12 @@ else{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> <!-- link for access to bulma api for page design-->
+
     <title>Order Update Page</title> <!--displays management order page-->
 </head>
 <body>
-    <h1>Update Order</h1>
+    <h1 class="title">Update Order</h1>
 
     <div>
         <p>Order ID: <?=$order_id?></p> <br>
@@ -96,20 +98,35 @@ else{
 
     <div> <!--The different options for updating order status -->
         <form action="manage_order_update_service.php" method="POST">
-            <label for="status">Status</label>
-            <select name="status" id="status">
-                <option <?php if($status == 'Pending'){echo(" selected ");}?> value="Pending">Pending</option>
-                <option <?php if($status == 'Started'){echo(" selected ");}?> value="Started">Started</option>
-                <option <?php if($status == 'Paid'){echo(" selected ");}?> value="Paid">Paid</option>
-                <option <?php if($status == 'In Progress'){echo(" selected ");}?> value="In Progress">In Progress</option>
-                <option <?php if($status == 'Completed'){echo(" selected ");}?> value="Completed">Completed</option>
-                <option <?php if($status == 'Out-for-Delivery'){echo(" selected ");}?> value="Out-for-Delivery">Out-for-Delivery</option>
-                <option <?php if($status == 'Delivered'){echo(" selected ");}?> value="Delivered">Delivered</option>
-                <option <?php if($status == 'Cancelled'){echo(" selected ");}?> value="Cancelled">Cancelled</option>
-            </select>
+
+                <div class="field">
+                    <label class = "label">Status</label>
+                    <div class="control">
+                        <div class="select">
+                            <select  name="status" id="status">
+                                <option <?php if($status == 'Pending'){echo(" selected ");}?> value="Pending">Pending</option>
+                                <option <?php if($status == 'Started'){echo(" selected ");}?> value="Started">Started</option>
+                                <option <?php if($status == 'Paid'){echo(" selected ");}?> value="Paid">Paid</option>
+                                <option <?php if($status == 'In Progress'){echo(" selected ");}?> value="In Progress">In Progress</option>
+                                <option <?php if($status == 'Completed'){echo(" selected ");}?> value="Completed">Completed</option>
+                                <option <?php if($status == 'Out-for-Delivery'){echo(" selected ");}?> value="Out-for-Delivery">Out-for-Delivery</option>
+                                <option <?php if($status == 'Delivered'){echo(" selected ");}?> value="Delivered">Delivered</option>
+                                <option <?php if($status == 'Cancelled'){echo(" selected ");}?> value="Cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+            <div class="field">
+                <div class="control">
+                    <button class="button is-link">Submit</button>
+                </div>
+            </div>
+
             <input type="hidden" name="order_ID" value="<?=$order_id?>">
 
-            <input type="submit" value="Submit">
+            <!-- <input type="submit" value="Submit"> -->
         </form>
     </div>
 </body>

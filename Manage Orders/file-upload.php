@@ -14,6 +14,60 @@ error_reporting(E_ALL | E_STRICT);
 <?php
     $order_id = $_GET['order_id'];
 
+    $root = $_SERVER['DOCUMENT_ROOT'];
+    include("$root" . "/Dias-Design/root_credentials.php");
+
+
+if(isset($order_id)){
+    $sql = "SELECT * FROM Orders WHERE OrderID = $order_id;";
+    $fetch = $conn ->query($sql);
+    $order_info = $fetch->fetchAll(PDO::FETCH_ASSOC);
+    $items_orderID = $order_info[0]["ProductID"];
+    $quantity =  $order_info[0]["quantity"];
+    $order_total = $order_info[0]["total_cost"];
+    $user_id = $order_info[0]["UserID"];
+    $status =  $order_info[0]["status"];
+    
+}
+else{
+    echo "There was an issue in selecting the order";
+}
+    function admin_check(){
+        if(!isset($_SESSION['adminID']))
+        {
+            echo "hidden";
+       }
+        
+    }
+
+    function direct(){
+        if(isset($_SESSION['uid'])){
+             echo "Profile/profile.php";
+        }
+        else{
+             echo "Authen/login.html";
+        }
+    }
+
+    function name_or_login(){
+        require('root_credentials.php');
+
+        if(isset($_SESSION['uid']))
+        {
+            $id = $_SESSION['uid'];
+            $sql = "SELECT email FROM Users WHERE UserID = $id;";
+            $fetched = $conn ->query($sql);
+            $email = $fetched->fetchAll(PDO::FETCH_ASSOC);
+            $dis = $email[0]["email"];
+            echo "$dis";
+       }
+       else{
+            echo "Login";
+       }
+    }
+
+
+
 ?>
 
 
@@ -37,6 +91,7 @@ error_reporting(E_ALL | E_STRICT);
   </style>
 </head>
 <body>
+
     <h2>
         Select an Invoice to Upload
     </h2>

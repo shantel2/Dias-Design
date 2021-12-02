@@ -33,8 +33,13 @@ if(password_verify($pass,$password_hashed)) {
   
 
   $_SESSION['uid'] = $result[0]["UserID"];
-  echo "$_SESSION[uid]";
-  // echo "<script> location.href = '../index.php'</script>";
+
+  //create admin session. 
+  if ($email == 'admin@dias.com'){
+  $_SESSION['adminID'] = $result[0]["UserID"];
+
+  }
+  echo "<script> location.href = '../index.php'</script>";
 
 } else {
   echo "<script>alert('Login Failed');</script>";
@@ -42,9 +47,4 @@ if(password_verify($pass,$password_hashed)) {
 
 }
 
-
-///$sql = $db->query();
-//$stmt =  $conn->query("SELECT c.name, c.district, c.population FROM cities c join countries cs on c.country_code =s.code WHERE cs.name LIKE '%$country%'");
-
-//header('location: http://localhost/useraccounts/login.html');
 ?>
