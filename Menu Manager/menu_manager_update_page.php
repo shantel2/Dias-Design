@@ -3,10 +3,7 @@
 <!--  -->
 
 
-<?php
-ini_set('display_errors', 'On'); //debugger
-error_reporting(E_ALL | E_STRICT);
-?>
+
 
 <?php
 $product_ID = filter_var($_GET['prod_id'],FILTER_SANITIZE_NUMBER_INT);

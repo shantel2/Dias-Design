@@ -3,10 +3,7 @@
 <!--  -->
 
 
-<?php
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-?>
+
 
 <?php
 $product_name = filter_var($_GET['title'],FILTER_SANITIZE_STRING);

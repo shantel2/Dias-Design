@@ -3,12 +3,7 @@
 <!--  -->
 
 
-<!-- DEBUGGING MODE -->
-<?php
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-?>
-<!-- END OF DEBUGGING MODE -->
+
 
 <?php
         $root = $_SERVER['DOCUMENT_ROOT'];
@@ -89,7 +84,7 @@ error_reporting(E_ALL | E_STRICT);
                 <ul id="buyItems"><!---section on the cart to check out items in cart-->
                     <h4 class="empty">Your shopping cart is empty</h4> 
                 </ul>                   
-                <button class="check-out">Check out</button>
+                <button class="check-out">Place Order</button>
 
             </div>
         </nav> <!--Navbar-->
